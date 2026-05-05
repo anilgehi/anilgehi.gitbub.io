@@ -8,347 +8,234 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:wght@300;400;600&family=JetBrains+Mono:wght@300;400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-  --carolina: #4b9cd3;
-  --carolina-dark: #13294b;
-  --carolina-mid: #1f5c8a;
-  --paper: #fafaf8;
-  --cream: #f2f0ea;
-  --ink: #1a1a1a;
-  --muted: #6b6560;
-  --border: #ddd8ce;
-  --gold: #c8973a;
-  --sidebar-w: 280px;
-  --serif: 'Playfair Display', Georgia, serif;
-  --serif2: 'Source Serif 4', Georgia, serif;
-  --sans: 'Inter', sans-serif;
-  --mono: 'JetBrains Mono', monospace;
+  --carolina:#4b9cd3; --carolina-dark:#13294b; --carolina-mid:#1f5c8a;
+  --paper:#fafaf8; --cream:#f2f0ea; --ink:#1a1a1a; --muted:#6b6560;
+  --border:#ddd8ce; --gold:#c8973a; --sidebar-w:280px;
+  --serif:'Playfair Display',Georgia,serif;
+  --serif2:'Source Serif 4',Georgia,serif;
+  --sans:'Inter',sans-serif; --mono:'JetBrains Mono',monospace;
 }
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body { background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 14.5px; line-height: 1.7; display: flex; min-height: 100vh; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:14.5px;line-height:1.7;display:flex;min-height:100vh}
 
-/* ═══ SIDEBAR ═══ */
-.sidebar {
-  width: var(--sidebar-w); min-height: 100vh;
-  background: var(--carolina-dark);
-  position: fixed; top: 0; left: 0;
-  display: flex; flex-direction: column;
-  z-index: 100; overflow-y: auto;
-}
-.sidebar-hero {
-  position: relative; overflow: hidden;
-  padding: 0;
-  min-height: 200px;
-  flex-shrink: 0;
-}
-.sidebar-hero img {
-  width: 100%; height: 200px; object-fit: cover; object-position: center top;
-  filter: brightness(0.55) saturate(0.7);
-  display: block;
-}
-.sidebar-hero-overlay {
-  position: absolute; bottom: 0; left: 0; right: 0;
-  padding: 16px 20px 14px;
-  background: linear-gradient(transparent, rgba(19,41,75,0.95));
-}
-.sidebar-name {
-  font-family: var(--serif); font-size: 1.12rem; font-weight: 600;
-  color: #f0eee8; line-height: 1.2; letter-spacing: 0.01em;
-}
-.sidebar-degree {
-  font-family: var(--mono); font-size: 0.65rem; color: var(--carolina);
-  letter-spacing: 0.1em; text-transform: uppercase; margin-top: 3px;
-}
-.sidebar-role {
-  font-size: 0.72rem; color: #a8b8c8; margin-top: 4px; line-height: 1.4;
-}
-.sidebar-divider { height: 1px; background: rgba(255,255,255,0.07); margin: 0 16px; }
-nav { padding: 10px 12px; flex: 1; }
-nav a {
-  display: flex; align-items: center; gap: 9px;
-  padding: 8px 12px; border-radius: 5px;
-  color: #9aafc4; text-decoration: none;
-  font-size: 0.8rem; font-weight: 400;
-  letter-spacing: 0.02em; transition: all 0.15s;
-  margin-bottom: 1px;
-}
-nav a:hover, nav a.active { background: rgba(75,156,211,0.15); color: #c8dff0; }
-nav a.active { color: var(--carolina); }
-nav a .nav-icon { width: 16px; text-align: center; font-size: 0.85rem; opacity: 0.7; }
-.nav-section-label {
-  font-family: var(--mono); font-size: 0.6rem; text-transform: uppercase;
-  letter-spacing: 0.14em; color: #4a6070; padding: 12px 12px 5px;
-}
-.sidebar-contact {
-  padding: 14px 20px 20px; border-top: 1px solid rgba(255,255,255,0.06);
-  font-family: var(--mono); font-size: 0.68rem; color: #5a7a94; line-height: 2;
-}
-.sidebar-contact a { color: #7090aa; text-decoration: none; }
-.sidebar-contact a:hover { color: var(--carolina); }
+/* SIDEBAR */
+.sidebar{width:var(--sidebar-w);min-height:100vh;background:var(--carolina-dark);position:fixed;top:0;left:0;display:flex;flex-direction:column;z-index:100;overflow-y:auto}
+.sidebar-hero{position:relative;overflow:hidden;min-height:220px;flex-shrink:0}
+.sidebar-hero img{width:100%;height:220px;object-fit:cover;object-position:center top;filter:brightness(0.5) saturate(0.7);display:block}
+.sidebar-hero-overlay{position:absolute;bottom:0;left:0;right:0;padding:16px 20px 14px;background:linear-gradient(transparent,rgba(19,41,75,0.97))}
+.sidebar-name{font-family:var(--serif);font-size:1.1rem;font-weight:600;color:#f0eee8;line-height:1.2}
+.sidebar-degree{font-family:var(--mono);font-size:0.62rem;color:var(--carolina);letter-spacing:.1em;text-transform:uppercase;margin-top:3px}
+.sidebar-role{font-size:.7rem;color:#a8b8c8;margin-top:4px;line-height:1.4}
+.sidebar-divider{height:1px;background:rgba(255,255,255,.07);margin:0 16px}
+nav{padding:10px 12px;flex:1}
+nav a{display:flex;align-items:center;gap:9px;padding:8px 12px;border-radius:5px;color:#9aafc4;text-decoration:none;font-size:.79rem;transition:all .15s;margin-bottom:1px}
+nav a:hover,nav a.active{background:rgba(75,156,211,.15);color:#c8dff0}
+nav a.active{color:var(--carolina)}
+.nav-icon{width:16px;text-align:center;font-size:.85rem;opacity:.7}
+.nav-section-label{font-family:var(--mono);font-size:.58rem;text-transform:uppercase;letter-spacing:.14em;color:#3a5060;padding:12px 12px 5px}
+.sidebar-contact{padding:14px 20px 20px;border-top:1px solid rgba(255,255,255,.06);font-family:var(--mono);font-size:.65rem;color:#5a7a94;line-height:2}
+.sidebar-contact a{color:#7090aa;text-decoration:none}
+.sidebar-contact a:hover{color:var(--carolina)}
 
-/* ═══ MAIN ═══ */
-.main { margin-left: var(--sidebar-w); flex: 1; min-height: 100vh; }
-.page { display: none; min-height: 100vh; }
-.page.active { display: block; animation: fadeIn 0.3s ease; }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+/* MAIN */
+.main{margin-left:var(--sidebar-w);flex:1;min-height:100vh}
+.page{display:none;min-height:100vh}
+.page.active{display:block;animation:fadeIn .3s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 
-/* ═══ HOME PAGE ═══ */
-.home-hero {
-  height: 360px; position: relative; overflow: hidden;
-  background: var(--carolina-dark);
-}
-.home-hero img {
-  width: 100%; height: 100%; object-fit: cover; object-position: center 40%;
-  filter: brightness(0.5) saturate(0.6);
-}
-.home-hero-text {
-  position: absolute; bottom: 40px; left: 60px; right: 60px;
-}
-.home-hero-label {
-  font-family: var(--mono); font-size: 0.68rem; text-transform: uppercase;
-  letter-spacing: 0.16em; color: var(--carolina); margin-bottom: 10px;
-}
-.home-hero-title {
-  font-family: var(--serif); font-size: 2.8rem; font-weight: 400;
-  color: #f0eee8; line-height: 1.1; letter-spacing: -0.01em;
-}
-.home-hero-subtitle {
-  font-size: 0.88rem; color: #9ab5cc; margin-top: 8px;
-}
+/* HEROES */
+.home-hero{height:370px;position:relative;overflow:hidden;background:var(--carolina-dark)}
+.home-hero img{width:100%;height:100%;object-fit:cover;object-position:center 35%;filter:brightness(.45) saturate(.6)}
+.home-hero-text{position:absolute;bottom:40px;left:60px;right:60px}
+.home-hero-label{font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.16em;color:var(--carolina);margin-bottom:10px}
+.home-hero-title{font-family:var(--serif);font-size:2.7rem;font-weight:400;color:#f0eee8;line-height:1.1}
+.home-hero-subtitle{font-size:.88rem;color:#9ab5cc;margin-top:8px}
+.page-hero{height:200px;position:relative;overflow:hidden;background:var(--carolina-dark)}
+.page-hero img{width:100%;height:100%;object-fit:cover;filter:brightness(.35) saturate(.5)}
+.page-hero-text{position:absolute;bottom:26px;left:56px}
+.page-hero-title{font-family:var(--serif);font-size:1.9rem;font-weight:400;color:#f0eee8}
+.page-hero-sub{font-family:var(--mono);font-size:.65rem;text-transform:uppercase;letter-spacing:.14em;color:var(--carolina);margin-bottom:6px}
 
-.home-body { max-width: 1100px; padding: 52px 60px; }
+/* HOME BODY */
+.home-body{max-width:1100px;padding:50px 60px}
+.home-grid{display:grid;grid-template-columns:2fr 1fr;gap:48px}
+.bio-lead{font-family:var(--serif2);font-size:1.07rem;font-weight:300;line-height:1.85;color:#2a2420;margin-bottom:18px}
+.bio-lead strong{font-weight:600;color:var(--carolina-mid)}
+.expertise-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.pill{font-family:var(--mono);font-size:.63rem;text-transform:uppercase;letter-spacing:.07em;padding:4px 12px;border-radius:20px;background:#e8f0f8;color:var(--carolina-mid);border:1px solid #c4d8ec}
+.quick-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:30px}
+.stat-box{background:var(--cream);border:1px solid var(--border);border-radius:5px;padding:16px;text-align:center}
+.stat-num{font-family:var(--serif);font-size:1.9rem;font-weight:700;color:var(--carolina-mid);line-height:1}
+.stat-label{font-size:.7rem;color:var(--muted);margin-top:4px;line-height:1.3}
+.home-sidebar-cards{display:flex;flex-direction:column;gap:12px}
+.home-scard{background:var(--cream);border:1px solid var(--border);border-radius:5px;padding:14px 16px;cursor:pointer;transition:border-color .2s,box-shadow .2s}
+.home-scard:hover{border-color:var(--carolina);box-shadow:0 2px 12px rgba(75,156,211,.12)}
+.home-scard-label{font-family:var(--mono);font-size:.6rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:5px}
+.home-scard-title{font-weight:500;font-size:.86rem;margin-bottom:3px}
+.home-scard p{font-size:.76rem;color:var(--muted);line-height:1.5}
 
-.home-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 48px; }
+/* PHOTO GRIDS */
+.photo-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0}
+.photo-grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:20px 0}
+.photo-card{border-radius:6px;overflow:hidden;border:1px solid var(--border)}
+.photo-card img{width:100%;height:155px;object-fit:cover;object-position:center top;display:block;filter:saturate(.85);transition:filter .25s}
+.photo-card:hover img{filter:saturate(1)}
+.photo-card-caption{background:var(--carolina-dark);color:#c8dff0;font-size:.72rem;padding:7px 10px;line-height:1.3}
+.photo-card-caption strong{display:block;font-weight:500;color:#e8f0f8}
+.photo-card-caption span{font-family:var(--mono);font-size:.62rem;color:#7090aa}
 
-.bio-lead {
-  font-family: var(--serif2); font-size: 1.1rem; font-weight: 300;
-  line-height: 1.85; color: #2a2420; margin-bottom: 24px;
-}
-.bio-lead strong { font-weight: 600; color: var(--carolina-mid); }
+/* PAGE CONTENT */
+.page-content{max-width:960px;padding:44px 56px}
+.section{margin-bottom:46px}
+.section-title{font-family:var(--mono);font-size:.67rem;text-transform:uppercase;letter-spacing:.14em;color:var(--carolina-mid);padding-bottom:10px;border-bottom:1px solid var(--border);margin-bottom:22px}
 
-.expertise-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
-.pill {
-  font-family: var(--mono); font-size: 0.65rem; text-transform: uppercase;
-  letter-spacing: 0.08em; padding: 4px 12px; border-radius: 20px;
-  background: #e8f0f8; color: var(--carolina-mid);
-  border: 1px solid #c4d8ec;
-}
+/* TABS */
+.tab-nav{display:flex;gap:0;border-bottom:2px solid var(--border);margin-bottom:28px;flex-wrap:wrap}
+.tab-btn{font-family:var(--mono);font-size:.67rem;text-transform:uppercase;letter-spacing:.08em;padding:9px 18px;border:none;background:none;cursor:pointer;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-2px;transition:all .15s;white-space:nowrap}
+.tab-btn:hover{color:var(--carolina-mid)}
+.tab-btn.active{color:var(--carolina-dark);border-bottom-color:var(--carolina);font-weight:500}
+.tab-pane{display:none}
+.tab-pane.active{display:block}
 
-.quick-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-bottom: 32px; }
-.stat-box { background: var(--cream); border: 1px solid var(--border); border-radius: 5px; padding: 16px 18px; text-align: center; }
-.stat-num { font-family: var(--serif); font-size: 2rem; font-weight: 700; color: var(--carolina-mid); line-height: 1; }
-.stat-label { font-size: 0.72rem; color: var(--muted); margin-top: 4px; line-height: 1.3; }
+/* PUBLICATIONS */
+.pub-count-bar{display:flex;gap:20px;margin-bottom:24px;flex-wrap:wrap}
+.pub-count{display:flex;align-items:center;gap:8px;font-size:.8rem;color:var(--muted)}
+.pub-count-num{font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--carolina-mid)}
+.pub-entry{padding:13px 0 13px 16px;border-left:2px solid var(--border);margin-bottom:11px;font-size:.83rem;line-height:1.65;transition:border-color .2s}
+.pub-entry:hover{border-left-color:var(--carolina)}
+.pub-title{font-weight:500;color:var(--ink)}
+.pub-authors{color:var(--muted);margin-top:2px}
+.pub-journal{font-family:var(--mono);font-size:.7rem;color:var(--carolina-mid);margin-top:3px}
+.pub-tag{display:inline-block;font-family:var(--mono);font-size:.58rem;text-transform:uppercase;letter-spacing:.07em;padding:2px 8px;border-radius:12px;margin-right:6px;vertical-align:middle}
+.tag-ms{background:#e8f0f8;color:#2060a0;border:1px solid #c4d8ec}
+.tag-ed{background:#fef3e2;color:#9a5800;border:1px solid #f0d098}
+.tag-ab{background:#eef6ee;color:#2d7a2d;border:1px solid #b8d8b8}
+.tag-book{background:#f2e8f8;color:#6030a0;border:1px solid #d4b8ec}
+.tag-seminal{background:#fff0e8;color:#a03000;border:1px solid #f0c0a0}
 
-.home-sidebar-cards { display: flex; flex-direction: column; gap: 14px; }
-.home-scard {
-  background: var(--cream); border: 1px solid var(--border); border-radius: 5px;
-  padding: 16px 18px; cursor: pointer; transition: border-color 0.2s, box-shadow 0.2s;
-  text-decoration: none; color: inherit;
-}
-.home-scard:hover { border-color: var(--carolina); box-shadow: 0 2px 12px rgba(75,156,211,0.12); }
-.home-scard-label { font-family: var(--mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 6px; }
-.home-scard-title { font-weight: 500; font-size: 0.88rem; margin-bottom: 4px; }
-.home-scard p { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+/* CV */
+.cv-row{display:grid;grid-template-columns:130px 1fr;gap:16px;margin-bottom:16px;align-items:start}
+.cv-year{font-family:var(--mono);font-size:.7rem;color:var(--muted);padding-top:2px;text-align:right}
+.cv-title{font-weight:500;font-size:.88rem;margin-bottom:2px}
+.cv-sub{font-size:.78rem;color:var(--muted)}
+.cv-sub em{font-style:italic;color:var(--carolina-mid)}
+.cv-download-btn{display:inline-flex;align-items:center;gap:8px;background:var(--carolina-dark);color:white;padding:10px 22px;border-radius:4px;text-decoration:none;font-family:var(--mono);font-size:.72rem;letter-spacing:.05em;margin-bottom:36px;transition:background .18s}
+.cv-download-btn:hover{background:var(--carolina-mid)}
 
-.home-img-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 40px; }
-.home-img-strip img { width: 100%; height: 160px; object-fit: cover; border-radius: 4px; filter: saturate(0.8); }
+/* TALKS */
+.talk-row{display:grid;grid-template-columns:88px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--border)}
+.talk-year{font-family:var(--mono);font-size:.7rem;color:var(--muted);padding-top:3px}
+.talk-title{font-weight:500;font-size:.87rem;margin-bottom:3px}
+.talk-venue{font-size:.77rem;color:var(--muted)}
+.talk-type{display:inline-block;font-family:var(--mono);font-size:.58rem;text-transform:uppercase;letter-spacing:.07em;padding:2px 8px;border-radius:12px;margin-top:5px}
+.tt-regional{background:#e8f0f8;color:#1a5a9a;border:1px solid #c4d8ec}
+.tt-grand{background:#fef3e2;color:#9a5800;border:1px solid #f0d098}
+.tt-local{background:#eef6ee;color:#2d6a2d;border:1px solid #b8d8b8}
+.tt-course{background:#f8e8f8;color:#8030a0;border:1px solid #d4b0d8}
 
-/* ═══ PAGE HEADER ═══ */
-.page-hero {
-  height: 220px; position: relative; overflow: hidden;
-  background: var(--carolina-dark);
-}
-.page-hero img {
-  width: 100%; height: 100%; object-fit: cover;
-  filter: brightness(0.4) saturate(0.5);
-}
-.page-hero-text {
-  position: absolute; bottom: 28px; left: 56px;
-}
-.page-hero-title {
-  font-family: var(--serif); font-size: 2rem; font-weight: 400;
-  color: #f0eee8; letter-spacing: -0.01em;
-}
-.page-hero-sub {
-  font-family: var(--mono); font-size: 0.68rem; text-transform: uppercase;
-  letter-spacing: 0.14em; color: var(--carolina); margin-bottom: 8px;
-}
+/* EP FELLOWSHIP */
+.ep-banner{background:linear-gradient(135deg,var(--carolina-dark) 0%,#0d2244 100%);padding:40px 56px;position:relative;overflow:hidden}
+.ep-banner::after{content:'';position:absolute;top:-80px;right:-80px;width:300px;height:300px;border-radius:50%;background:rgba(75,156,211,.06)}
+.ep-banner-label{font-family:var(--mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.14em;color:var(--carolina);margin-bottom:10px}
+.ep-banner-title{font-family:var(--serif);font-size:1.9rem;font-weight:400;color:#f0eee8;margin-bottom:12px}
+.ep-banner-desc{font-size:.85rem;color:#8aa0b8;line-height:1.8;max-width:640px}
+.ep-stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:34px}
+.ep-stat{background:var(--cream);border:1px solid var(--border);border-radius:5px;padding:16px 18px;text-align:center}
+.ep-stat-num{font-family:var(--serif);font-size:1.7rem;font-weight:700;color:var(--carolina-mid)}
+.ep-stat-label{font-size:.7rem;color:var(--muted);margin-top:3px;line-height:1.3}
 
-/* ═══ PAGE CONTENT ═══ */
-.page-content { max-width: 960px; padding: 48px 56px; }
-.section { margin-bottom: 52px; }
-.section-title {
-  font-family: var(--mono); font-size: 0.68rem; text-transform: uppercase;
-  letter-spacing: 0.14em; color: var(--carolina-mid);
-  padding-bottom: 10px; border-bottom: 1px solid var(--border);
-  margin-bottom: 24px;
-}
+/* READING LIST */
+.reading-category{margin-bottom:30px}
+.reading-category-title{font-family:var(--serif);font-size:1.05rem;font-weight:600;color:var(--carolina-dark);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.reading-item{display:flex;gap:14px;padding:12px 14px;border-radius:5px;margin-bottom:8px;background:var(--cream);border:1px solid var(--border);transition:border-color .2s}
+.reading-item:hover{border-color:var(--carolina)}
+.reading-icon{font-size:1.1rem;flex-shrink:0;padding-top:1px}
+.reading-item-title{font-weight:500;font-size:.86rem;margin-bottom:2px}
+.reading-item-title a{color:var(--carolina-mid);text-decoration:none}
+.reading-item-title a:hover{text-decoration:underline}
+.reading-item-authors{font-size:.76rem;color:var(--muted);margin-bottom:4px}
+.reading-item-note{font-size:.76rem;color:#4a6070;line-height:1.55;font-style:italic}
+.reading-tag{display:inline-block;font-family:var(--mono);font-size:.58rem;text-transform:uppercase;letter-spacing:.07em;padding:2px 8px;border-radius:12px;margin-right:6px}
+.rt-book{background:#fef3e2;color:#9a5800;border:1px solid #f0d098}
+.rt-video{background:#eef6ee;color:#2d6a2d;border:1px solid #b8d8b8}
+.rt-online{background:#e8f0f8;color:#1a5a9a;border:1px solid #c4d8ec}
+.rt-article{background:#f0e8f8;color:#6030a0;border:1px solid #d0b8ec}
 
-/* ═══ PUBLICATIONS ═══ */
-.pub-filters { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
-.filter-btn {
-  font-family: var(--mono); font-size: 0.68rem; text-transform: uppercase;
-  letter-spacing: 0.08em; padding: 5px 14px; border-radius: 20px;
-  border: 1px solid var(--border); background: white; cursor: pointer;
-  color: var(--muted); transition: all 0.15s;
-}
-.filter-btn.active, .filter-btn:hover {
-  background: var(--carolina-dark); color: white; border-color: var(--carolina-dark);
-}
-.pub-entry {
-  padding: 14px 0 14px 16px; border-left: 2px solid var(--border);
-  margin-bottom: 12px; font-size: 0.84rem; line-height: 1.65; transition: border-color 0.2s;
-}
-.pub-entry:hover { border-left-color: var(--carolina); }
-.pub-title { font-weight: 500; color: var(--ink); }
-.pub-authors { color: var(--muted); margin-top: 2px; }
-.pub-journal { font-family: var(--mono); font-size: 0.72rem; color: var(--carolina-mid); margin-top: 3px; }
-.pub-tag {
-  display: inline-block; font-family: var(--mono); font-size: 0.6rem; text-transform: uppercase;
-  letter-spacing: 0.07em; padding: 2px 8px; border-radius: 12px; margin-right: 6px;
-  vertical-align: middle;
-}
-.tag-ms { background: #e8f0f8; color: #2060a0; border: 1px solid #c4d8ec; }
-.tag-ed { background: #fef3e2; color: #9a5800; border: 1px solid #f0d098; }
-.tag-ab { background: #eef6ee; color: #2d7a2d; border: 1px solid #b8d8b8; }
-.tag-book { background: #f2e8f8; color: #6030a0; border: 1px solid #d4b8ec; }
+/* SEMINAL ERAS */
+.seminal-era{margin-bottom:34px}
+.seminal-era-title{font-family:var(--serif);font-size:1.05rem;font-weight:600;color:var(--carolina-dark);display:flex;align-items:center;gap:12px;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.era-badge{font-family:var(--mono);font-size:.65rem;background:var(--carolina-dark);color:var(--carolina);padding:3px 10px;border-radius:12px}
 
-.pub-count-bar {
-  display: flex; gap: 20px; margin-bottom: 28px; flex-wrap: wrap;
-}
-.pub-count {
-  display: flex; align-items: center; gap: 8px;
-  font-size: 0.82rem; color: var(--muted);
-}
-.pub-count-num {
-  font-family: var(--serif); font-size: 1.4rem; font-weight: 700; color: var(--carolina-mid);
-}
+/* COLLABORATORS */
+.collab-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
+.collab-card{background:var(--cream);border:1px solid var(--border);border-radius:6px;overflow:hidden;transition:border-color .2s,box-shadow .2s}
+.collab-card:hover{border-color:var(--carolina);box-shadow:0 2px 12px rgba(75,156,211,.1)}
+.collab-photo{width:100%;height:140px;object-fit:cover;object-position:center top;display:block;filter:saturate(.85)}
+.collab-photo-placeholder{width:100%;height:140px;background:linear-gradient(135deg,#1f3d5a,#13294b);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:2rem;color:var(--carolina)}
+.collab-body{padding:12px 14px}
+.collab-name{font-weight:500;font-size:.88rem;margin-bottom:2px}
+.collab-inst{font-size:.74rem;color:var(--muted);margin-bottom:5px}
+.collab-area{font-family:var(--mono);font-size:.6rem;text-transform:uppercase;letter-spacing:.07em;color:var(--carolina-mid)}
 
-/* ═══ CV PAGE ═══ */
-.cv-row { display: grid; grid-template-columns: 130px 1fr; gap: 16px; margin-bottom: 18px; align-items: start; }
-.cv-year { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); padding-top: 2px; text-align: right; }
-.cv-title { font-weight: 500; font-size: 0.9rem; margin-bottom: 2px; }
-.cv-sub { font-size: 0.8rem; color: var(--muted); }
-.cv-sub em { font-style: italic; color: var(--carolina-mid); }
-.cv-download-btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: var(--carolina-dark); color: white;
-  padding: 10px 22px; border-radius: 4px; text-decoration: none;
-  font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.05em;
-  margin-bottom: 40px; transition: background 0.18s;
+/* PROJECTS */
+.project-card{border:1px solid var(--border);border-radius:5px;margin-bottom:18px;overflow:hidden}
+.project-head{background:var(--cream);padding:18px 22px;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;cursor:pointer}
+.project-head:hover{background:#e8e4dc}
+.project-head-title{font-weight:500;font-size:.9rem;margin-bottom:3px}
+.project-head-meta{font-family:var(--mono);font-size:.68rem;color:var(--muted)}
+.proj-tag{font-family:var(--mono);font-size:.6rem;text-transform:uppercase;letter-spacing:.07em;padding:3px 10px;border-radius:12px;flex-shrink:0;margin-top:2px}
+.proj-active{background:#d4edda;color:#1a6a35;border:1px solid #a8d8b4}
+.proj-complete{background:#e8e8e8;color:#666;border:1px solid #ccc}
+.project-body{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease;padding:0 22px}
+.project-body.open{max-height:600px;padding:14px 22px 22px}
+.project-body p{font-size:.84rem;line-height:1.75;margin-bottom:10px}
+.update-row{display:flex;gap:12px;margin-bottom:6px;font-size:.8rem}
+.update-date{font-family:var(--mono);font-size:.68rem;color:var(--gold);min-width:60px;padding-top:2px}
+
+/* MISC */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.feature-img{width:100%;border-radius:5px;object-fit:cover}
+.img-caption{font-size:.7rem;color:var(--muted);text-align:center;margin-top:5px;font-family:var(--mono)}
+.fellow-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px}
+.fellow-card{background:var(--cream);border:1px solid var(--border);border-radius:5px;padding:14px 16px}
+.fellow-name{font-weight:500;font-size:.86rem;margin-bottom:2px}
+.fellow-year{font-family:var(--mono);font-size:.66rem;color:var(--muted);margin-bottom:3px}
+.fellow-now{font-size:.74rem;color:var(--carolina-mid)}
+
+@media(max-width:900px){
+  :root{--sidebar-w:240px}
+  .home-body,.page-content{padding:32px 28px}
+  .home-grid{grid-template-columns:1fr}
+  .two-col{grid-template-columns:1fr}
+  .ep-stat-row{grid-template-columns:repeat(2,1fr)}
+  .photo-grid-4{grid-template-columns:repeat(2,1fr)}
 }
-.cv-download-btn:hover { background: var(--carolina-mid); }
-
-/* ═══ TALKS PAGE ═══ */
-.talk-row {
-  display: grid; grid-template-columns: 90px 1fr;
-  gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--border);
-}
-.talk-year { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); padding-top: 3px; }
-.talk-title { font-weight: 500; font-size: 0.88rem; margin-bottom: 3px; }
-.talk-venue { font-size: 0.78rem; color: var(--muted); }
-.talk-type {
-  display: inline-block; font-family: var(--mono); font-size: 0.6rem; text-transform: uppercase;
-  letter-spacing: 0.07em; padding: 2px 8px; border-radius: 12px; margin-top: 5px;
-}
-.tt-regional { background: #e8f0f8; color: #1a5a9a; border: 1px solid #c4d8ec; }
-.tt-grand { background: #fef3e2; color: #9a5800; border: 1px solid #f0d098; }
-.tt-local { background: #eef6ee; color: #2d6a2d; border: 1px solid #b8d8b8; }
-.tt-course { background: #f8e8f8; color: #8030a0; border: 1px solid #d4b0d8; }
-.tt-national { background: #ffe8e8; color: #a02020; border: 1px solid #dca0a0; }
-
-/* ═══ EP FELLOWSHIP PAGE ═══ */
-.ep-banner {
-  background: linear-gradient(135deg, var(--carolina-dark) 0%, #0d2244 100%);
-  padding: 40px 56px; position: relative; overflow: hidden;
-}
-.ep-banner::after {
-  content: ''; position: absolute; top: -80px; right: -80px;
-  width: 300px; height: 300px; border-radius: 50%;
-  background: rgba(75,156,211,0.06);
-}
-.ep-banner-label { font-family: var(--mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--carolina); margin-bottom: 10px; }
-.ep-banner-title { font-family: var(--serif); font-size: 2rem; font-weight: 400; color: #f0eee8; margin-bottom: 14px; }
-.ep-banner-desc { font-size: 0.87rem; color: #8aa0b8; line-height: 1.8; max-width: 640px; }
-
-.ep-stat-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-bottom: 40px; }
-.ep-stat { background: var(--cream); border: 1px solid var(--border); border-radius: 5px; padding: 18px 20px; text-align: center; }
-.ep-stat-num { font-family: var(--serif); font-size: 1.8rem; font-weight: 700; color: var(--carolina-mid); }
-.ep-stat-label { font-size: 0.72rem; color: var(--muted); margin-top: 3px; line-height: 1.3; }
-
-.fellow-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
-.fellow-card { background: var(--cream); border: 1px solid var(--border); border-radius: 5px; padding: 16px 18px; transition: border-color 0.2s; }
-.fellow-card:hover { border-color: var(--carolina); }
-.fellow-name { font-weight: 500; font-size: 0.88rem; margin-bottom: 2px; }
-.fellow-year { font-family: var(--mono); font-size: 0.68rem; color: var(--muted); margin-bottom: 4px; }
-.fellow-now { font-size: 0.75rem; color: var(--carolina-mid); }
-
-/* ═══ COLLABORATORS ═══ */
-.collab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 16px; }
-.collab-card { background: var(--cream); border: 1px solid var(--border); border-radius: 5px; padding: 16px 18px; transition: border-color 0.2s; }
-.collab-card:hover { border-color: var(--carolina); }
-.collab-name { font-weight: 500; font-size: 0.9rem; margin-bottom: 3px; }
-.collab-inst { font-size: 0.76rem; color: var(--muted); margin-bottom: 5px; }
-.collab-area { font-family: var(--mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--carolina-mid); }
-
-/* ═══ PROJECT CARDS ═══ */
-.project-card { border: 1px solid var(--border); border-radius: 5px; margin-bottom: 20px; overflow: hidden; }
-.project-head { background: var(--cream); padding: 20px 24px; display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; cursor: pointer; }
-.project-head:hover { background: #e8e4dc; }
-.project-head-title { font-weight: 500; font-size: 0.92rem; margin-bottom: 3px; }
-.project-head-meta { font-family: var(--mono); font-size: 0.7rem; color: var(--muted); }
-.proj-tag { font-family: var(--mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.07em; padding: 3px 10px; border-radius: 12px; flex-shrink: 0; margin-top: 2px; }
-.proj-active { background: #d4edda; color: #1a6a35; border: 1px solid #a8d8b4; }
-.proj-complete { background: #e8e8e8; color: #666; border: 1px solid #ccc; }
-.project-body { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; padding: 0 24px; }
-.project-body.open { max-height: 600px; padding: 16px 24px 24px; }
-.project-body p { font-size: 0.85rem; line-height: 1.75; margin-bottom: 12px; }
-.update-row { display: flex; gap: 12px; margin-bottom: 6px; font-size: 0.82rem; }
-.update-date { font-family: var(--mono); font-size: 0.7rem; color: var(--gold); min-width: 65px; padding-top: 2px; }
-
-/* ═══ MISC SHARED ═══ */
-.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.img-caption { font-size: 0.72rem; color: var(--muted); text-align: center; margin-top: 6px; font-family: var(--mono); }
-.feature-img { width: 100%; border-radius: 5px; object-fit: cover; }
-.inline-img { float: right; width: 260px; border-radius: 5px; margin: 0 0 20px 28px; object-fit: cover; }
-
-@media (max-width: 900px) {
-  :root { --sidebar-w: 240px; }
-  .home-body, .page-content { padding: 36px 32px; }
-  .home-grid { grid-template-columns: 1fr; }
-  .two-col { grid-template-columns: 1fr; }
-  .ep-stat-row { grid-template-columns: repeat(2,1fr); }
-}
-@media (max-width: 640px) {
-  .sidebar { display: none; }
-  .main { margin-left: 0; }
-  .home-body, .page-content { padding: 28px 20px; }
-  .cv-row, .talk-row { grid-template-columns: 1fr; }
-  .cv-year, .talk-year { text-align: left; }
-  .quick-stats { grid-template-columns: 1fr 1fr; }
-  .home-hero-title { font-size: 2rem; }
-  .home-hero-text { left: 24px; right: 24px; bottom: 24px; }
-  .inline-img { float: none; width: 100%; margin: 0 0 16px 0; }
+@media(max-width:640px){
+  .sidebar{display:none}
+  .main{margin-left:0}
+  .home-body,.page-content{padding:24px 18px}
+  .cv-row,.talk-row{grid-template-columns:1fr}
+  .cv-year,.talk-year{text-align:left}
+  .photo-grid-3,.photo-grid-4{grid-template-columns:1fr 1fr}
+  .home-hero-title{font-size:2rem}
+  .home-hero-text{left:22px;right:22px;bottom:22px}
+  .quick-stats{grid-template-columns:1fr 1fr}
 }
 </style>
 </head>
 <body>
 
-<!-- ═══════════════════ SIDEBAR ═══════════════════ -->
 <aside class="sidebar">
   <div class="sidebar-hero">
-    <img src="https://www.med.unc.edu/medicine/cardiology/wp-content/uploads/sites/640/2019/03/Gehi_Anil_025.jpg" 
-         alt="Dr. Anil K. Gehi"
-         onerror="this.style.display='none'; this.parentElement.style.background='#1f3d5a'; this.parentElement.style.display='flex'; this.parentElement.style.alignItems='center'; this.parentElement.style.justifyContent='center';">
+    <img src="https://www.med.unc.edu/medicine/cardiology/wp-content/uploads/sites/640/2019/03/Gehi_Anil_025.jpg" alt="Dr. Anil K. Gehi" onerror="this.parentElement.style.background='#1f3d5a'">
     <div class="sidebar-hero-overlay">
       <div class="sidebar-name">Anil K. Gehi, MD</div>
       <div class="sidebar-degree">Professor of Medicine · UNC</div>
       <div class="sidebar-role">Sewell Family–McAllister Distinguished Professor<br>Director, Cardiac Electrophysiology</div>
     </div>
   </div>
-
   <div class="sidebar-divider"></div>
-
   <nav>
     <div class="nav-section-label">Navigation</div>
     <a href="#" class="active" onclick="showPage('home',this);return false;"><span class="nav-icon">◎</span>Home</a>
@@ -359,982 +246,441 @@ nav a .nav-icon { width: 16px; text-align: center; font-size: 0.85rem; opacity: 
     <a href="#" onclick="showPage('ep',this);return false;"><span class="nav-icon">♡</span>EP Fellowship</a>
     <a href="#" onclick="showPage('collaborators',this);return false;"><span class="nav-icon">◉</span>Collaborators</a>
   </nav>
-
   <div class="sidebar-contact">
     <div>📧 <a href="mailto:anilgehi@med.unc.edu">anilgehi@med.unc.edu</a></div>
     <div>📞 919-966-4743</div>
     <div>6025 Burnett-Womack Bldg</div>
     <div>Chapel Hill, NC 27599</div>
     <div style="margin-top:10px">
-      <a href="https://www.med.unc.edu/medicine/cardiology/about/people/faculty/anil-gehi" target="_blank">UNC Profile</a> · 
-      <a href="https://pubmed.ncbi.nlm.nih.gov/?term=Gehi+AK" target="_blank">PubMed</a>
+      <a href="https://www.med.unc.edu/medicine/cardiology/about/people/faculty/anil-gehi" target="_blank">UNC Profile</a> ·
+      <a href="https://pubmed.ncbi.nlm.nih.gov/?term=Gehi+AK%5Bauthor%5D&sort=date" target="_blank">PubMed</a>
     </div>
   </div>
 </aside>
 
-<!-- ═══════════════════ MAIN ═══════════════════ -->
 <main class="main">
 
-<!-- ━━━━━━━━━━━━━━━━━━━━━━━ HOME ━━━━━━━━━━━━━━━━━━━━━━━ -->
+<!-- HOME -->
 <section class="page active" id="page-home">
   <div class="home-hero">
-    <img src="https://research.unc.edu/wp-content/uploads/2024/02/Gehi_Anil_Research_2024_MeganMendenhall__MG_7428.jpg"
-         alt="Dr. Gehi in the EP lab"
-         onerror="this.style.background='#13294b'; this.style.height='100%';">
+    <img src="https://research.unc.edu/wp-content/uploads/2024/02/Gehi_Anil_Research_2024_MeganMendenhall__MG_7428.jpg" alt="Dr. Gehi" onerror="this.style.background='#13294b'">
     <div class="home-hero-text">
       <div class="home-hero-label">Cardiac Electrophysiology · UNC Chapel Hill</div>
       <div class="home-hero-title">Restoring Rhythm.<br>Redesigning Care.</div>
       <div class="home-hero-subtitle">Atrial Fibrillation · Hybrid Ablation · Systems of Care · Digital Health</div>
     </div>
   </div>
-
   <div class="home-body">
     <div class="home-grid">
       <div>
-        <p class="bio-lead">
-          I am the <strong>Sewell Family–McAllister Distinguished Professor of Medicine</strong> in the Division of Cardiology at the University of North Carolina at Chapel Hill, where I serve as Director of Cardiac Electrophysiology and Program Director of the Clinical Cardiac Electrophysiology Fellowship.
-        </p>
-        <p class="bio-lead">
-          My career bridges two worlds: the precision of <strong>electrical engineering</strong> — where I began at MIT — and the art of medicine. Cardiac electrophysiology became the natural synthesis: cool technology, a problem-solving mentality, and the fulfillment of doing something curative for patients. My research focuses on improving care for patients with <strong>atrial fibrillation</strong>, from novel ablation techniques to system-wide care pathway redesign and digital health.
-        </p>
-
+        <p class="bio-lead">I am the <strong>Sewell Family–McAllister Distinguished Professor of Medicine</strong> in the Division of Cardiology at the University of North Carolina at Chapel Hill, where I serve as Director of Cardiac Electrophysiology and Program Director of the Clinical Cardiac Electrophysiology Fellowship.</p>
+        <p class="bio-lead">My career bridges two worlds: the precision of <strong>electrical engineering</strong> — where I began at MIT — and the art of medicine. Cardiac electrophysiology became the natural synthesis: cool technology, a problem-solving mentality, and the fulfillment of doing something curative for patients. My research focuses on improving care for patients with <strong>atrial fibrillation</strong>, from novel ablation techniques to system-wide care pathway redesign and digital health.</p>
         <div class="expertise-pills">
-          <span class="pill">Atrial Fibrillation</span>
-          <span class="pill">Catheter Ablation</span>
-          <span class="pill">Hybrid EP Ablation</span>
-          <span class="pill">ICD / Pacemaker</span>
-          <span class="pill">Device Extraction</span>
-          <span class="pill">Systems of Care</span>
-          <span class="pill">Digital Health</span>
-          <span class="pill">Health Disparities</span>
-          <span class="pill">Emergency Dept. AFib</span>
+          <span class="pill">Atrial Fibrillation</span><span class="pill">Catheter Ablation</span><span class="pill">Hybrid EP Ablation</span><span class="pill">ICD / Pacemaker</span><span class="pill">Device Extraction</span><span class="pill">Systems of Care</span><span class="pill">Digital Health</span><span class="pill">Health Disparities</span><span class="pill">Emergency Dept. AFib</span>
         </div>
-
         <div class="quick-stats">
           <div class="stat-box"><div class="stat-num">100+</div><div class="stat-label">Peer-reviewed publications</div></div>
           <div class="stat-box"><div class="stat-num">17+</div><div class="stat-label">Years at UNC Chapel Hill</div></div>
           <div class="stat-box"><div class="stat-num">$3M+</div><div class="stat-label">Funded research (PI)</div></div>
         </div>
-
-        <div class="home-img-strip">
-          <div>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/UNC-CH_Medical_Center.jpg/1280px-UNC-CH_Medical_Center.jpg"
-                 alt="UNC Medical Center"
-                 onerror="this.style.display='none';">
-            <div class="img-caption">UNC Medical Center, Chapel Hill</div>
-          </div>
-          <div>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Catheter_ablation_of_atrial_fibrillation.jpg/1024px-Catheter_ablation_of_atrial_fibrillation.jpg"
-                 alt="AF ablation procedure"
-                 onerror="this.style.display='none';">
-            <div class="img-caption">Catheter ablation for atrial fibrillation</div>
-          </div>
-          <div>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Atrial_fibrillation_ECG_Lead_II.jpg/1280px-Atrial_fibrillation_ECG_Lead_II.jpg"
-                 alt="Atrial fibrillation ECG"
-                 onerror="this.style.display='none';">
-            <div class="img-caption">Atrial fibrillation ECG tracing</div>
-          </div>
+        <div class="photo-grid-3">
+          <div class="photo-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/UNC-CH_Medical_Center.jpg/1280px-UNC-CH_Medical_Center.jpg" alt="UNC Medical Center"><div class="photo-card-caption"><strong>UNC Medical Center</strong><span>Chapel Hill, NC</span></div></div>
+          <div class="photo-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Catheter_ablation_of_atrial_fibrillation.jpg/1024px-Catheter_ablation_of_atrial_fibrillation.jpg" alt="AF ablation"><div class="photo-card-caption"><strong>Catheter Ablation</strong><span>Atrial fibrillation procedure</span></div></div>
+          <div class="photo-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Atrial_fibrillation_ECG_Lead_II.jpg/1280px-Atrial_fibrillation_ECG_Lead_II.jpg" alt="AFib ECG"><div class="photo-card-caption"><strong>Atrial Fibrillation ECG</strong><span>Characteristic rhythm tracing</span></div></div>
         </div>
       </div>
-
       <div class="home-sidebar-cards">
-        <div class="home-scard" onclick="showPage('research',document.querySelector('nav a:nth-child(3)'))">
-          <div class="home-scard-label">Current Work</div>
-          <div class="home-scard-title">Active Research Projects</div>
-          <p>AFib care pathways, ED decision tools, machine learning, PCORI-funded trials.</p>
-        </div>
-        <div class="home-scard" onclick="showPage('pubs',document.querySelector('nav a:nth-child(5)'))">
-          <div class="home-scard-label">Scholarship</div>
-          <div class="home-scard-title">100+ Publications</div>
-          <p>Original research, editorials, book chapters, and conference abstracts.</p>
-        </div>
-        <div class="home-scard" onclick="showPage('talks',document.querySelector('nav a:nth-child(6)'))">
-          <div class="home-scard-label">Education</div>
-          <div class="home-scard-title">Teaching &amp; Invited Talks</div>
-          <p>Regional, national talks; Grand Rounds; EKG and arrhythmia courses.</p>
-        </div>
-        <div class="home-scard" onclick="showPage('ep',document.querySelector('nav a:nth-child(7)'))">
-          <div class="home-scard-label">Fellowship</div>
-          <div class="home-scard-title">EP Fellowship Program</div>
-          <p>Director since 2012. 24-month ACGME-accredited training in all aspects of EP.</p>
-        </div>
-        <div class="home-scard" onclick="showPage('collaborators',document.querySelector('nav a:nth-child(8)'))">
-          <div class="home-scard-label">Network</div>
-          <div class="home-scard-title">Research Collaborators</div>
-          <p>Active partnerships at UNC, Yale, UCSF, Vanderbilt, and beyond.</p>
-        </div>
+        <div class="home-scard" onclick="showPage('research',document.querySelector('nav a:nth-child(3)'))"><div class="home-scard-label">Current Work</div><div class="home-scard-title">Active Research Projects</div><p>PCORI trials, AFib care pathways, ML, and digital health.</p></div>
+        <div class="home-scard" onclick="showPage('pubs',document.querySelector('nav a:nth-child(5)'))"><div class="home-scard-label">Scholarship</div><div class="home-scard-title">100+ Publications</div><p>Original research, editorials, book chapters, and abstracts.</p></div>
+        <div class="home-scard" onclick="showPage('talks',document.querySelector('nav a:nth-child(6)'))"><div class="home-scard-label">Education</div><div class="home-scard-title">Teaching &amp; Invited Talks</div><p>Regional, national talks; Grand Rounds; EKG and arrhythmia courses.</p></div>
+        <div class="home-scard" onclick="showPage('ep',document.querySelector('nav a:nth-child(7)'))"><div class="home-scard-label">Fellowship</div><div class="home-scard-title">EP Fellowship Program</div><p>Director since 2012. Reading list, seminal articles, and training resources.</p></div>
+        <div class="home-scard" onclick="showPage('collaborators',document.querySelector('nav a:nth-child(8)'))"><div class="home-scard-label">Network</div><div class="home-scard-title">Research Collaborators</div><p>Active partnerships at UNC, Yale, Stanford, and beyond.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ━━━━━━━━━━━━━━━━━━━━━━━ RESEARCH ━━━━━━━━━━━━━━━━━━━━━━━ -->
+<!-- RESEARCH -->
 <section class="page" id="page-research">
-  <div class="page-hero">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Catheter_ablation_of_atrial_fibrillation.jpg/1024px-Catheter_ablation_of_atrial_fibrillation.jpg"
-         alt="EP lab"
-         onerror="this.style.background='#13294b';">
-    <div class="page-hero-text">
-      <div class="page-hero-sub">Research</div>
-      <div class="page-hero-title">Projects &amp; Funded Studies</div>
-    </div>
-  </div>
+  <div class="page-hero"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Catheter_ablation_of_atrial_fibrillation.jpg/1024px-Catheter_ablation_of_atrial_fibrillation.jpg" alt="EP lab" onerror="this.style.background='#13294b'"><div class="page-hero-text"><div class="page-hero-sub">Research</div><div class="page-hero-title">Projects &amp; Funded Studies</div></div></div>
   <div class="page-content">
-
-    <div class="section">
-      <div class="section-title">Active Funded Projects</div>
-
-      <div class="project-card">
-        <div class="project-head" onclick="toggleProj(this)">
-          <div>
-            <div class="project-head-title">REACT-AF Trial: Rhythm Evaluation for Anticoagulation with Continuous Monitoring</div>
-            <div class="project-head-meta">2023 – Present · Principal Investigator · PCORI</div>
-          </div>
-          <span class="proj-tag proj-active">Active</span>
-        </div>
-        <div class="project-body open">
-          <p>REACT-AF is a PCORI-funded trial evaluating whether continuous atrial fibrillation monitoring to guide anticoagulation decisions can reduce stroke and bleeding compared to continuous therapy. The trial addresses a fundamental clinical question: can rhythm-guided anticoagulation be safely implemented with modern monitoring technologies?</p>
-          <h4 style="font-size:0.72rem;font-family:var(--mono);text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:8px;">Updates</h4>
-          <div class="update-row"><span class="update-date">2024</span><span>Enrollment ongoing. Multi-site coordination underway.</span></div>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-head" onclick="toggleProj(this)">
-          <div>
-            <div class="project-head-title">Left vs. Left: CRT with His/Left Bundle Branch Pacing vs. Biventricular Pacing (RCT)</div>
-            <div class="project-head-meta">2024 – Present · Principal Investigator · PCORI</div>
-          </div>
-          <span class="proj-tag proj-active">Active</span>
-        </div>
-        <div class="project-body">
-          <p>A randomized clinical trial comparing cardiac resynchronization therapy using His/left bundle branch area pacing versus biventricular pacing with a left ventricular epicardial lead in patients with heart failure (LVEF ≤50%) and wide QRS or anticipated high pacing burden.</p>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-head" onclick="toggleProj(this)">
-          <div>
-            <div class="project-head-title">Improving Outpatient AF Care Across Central NC: Direct Primary Care &amp; Patient Engagement</div>
-            <div class="project-head-meta">2021 – Present · Principal Investigator · Bristol Myers Squibb Foundation · $1,169,615</div>
-          </div>
-          <span class="proj-tag proj-active">Active</span>
-        </div>
-        <div class="project-body">
-          <p>A comprehensive program to improve atrial fibrillation care for underserved populations across central North Carolina by engaging primary care providers and patients through a novel care network, tele-mentoring, and digital health tools.</p>
-          <div class="update-row"><span class="update-date">2023</span><span>AFib Integrated Care Clinic launched. Community provider training modules deployed.</span></div>
-          <div class="update-row"><span class="update-date">2022</span><span>System-wide implementation of AFib treatment pathway; reduced hospitalizations documented.</span></div>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-head" onclick="toggleProj(this)">
-          <div>
-            <div class="project-head-title">OCEANIC-AF: Asundexian vs. Apixaban in Atrial Fibrillation</div>
-            <div class="project-head-meta">2022 – Present · Principal Investigator · Bayer Pharmaceuticals</div>
-          </div>
-          <span class="proj-tag proj-active">Active</span>
-        </div>
-        <div class="project-body">
-          <p>A Phase III industry-sponsored trial evaluating the novel Factor XIa inhibitor asundexian compared to apixaban for stroke prevention in atrial fibrillation. UNC is a participating clinical site.</p>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-head" onclick="toggleProj(this)">
-          <div>
-            <div class="project-head-title">Deep Learning Neural Network Analysis of ECGs for Heart Failure Characterization</div>
-            <div class="project-head-meta">2024 – Present · Principal Investigator · Investigator-Initiated</div>
-          </div>
-          <span class="proj-tag proj-active">Active</span>
-        </div>
-        <div class="project-body">
-          <p>Applying deep neural networks and machine learning to large ECG datasets to identify novel signatures of heart failure and arrhythmia risk. Collaboration with computer science and engineering faculty. Published preliminary findings in IEEE Xplore and ISNN 2024.</p>
-          <div class="update-row"><span class="update-date">2025</span><span>Li Y et al. "Adaptive model selection for real-time heart disease detection." IEEE Xplore. In press.</span></div>
-          <div class="update-row"><span class="update-date">2024</span><span>Li Y et al. "CardiacRT-NN: real-time detection using self-attention CNN-LSTM." ISNN 2024.</span></div>
-        </div>
-      </div>
+    <div class="section"><div class="section-title">Active Funded Projects</div>
+      <div class="project-card"><div class="project-head" onclick="toggleProj(this)"><div><div class="project-head-title">REACT-AF Trial: Rhythm Evaluation for Anticoagulation with Continuous Monitoring</div><div class="project-head-meta">2023–Present · PI · PCORI</div></div><span class="proj-tag proj-active">Active</span></div><div class="project-body open"><p>PCORI-funded randomized trial evaluating whether continuous AF monitoring to guide anticoagulation decisions can reduce stroke and bleeding vs. continuous therapy.</p><div class="update-row"><span class="update-date">2024</span><span>Enrollment ongoing. Multi-site coordination active.</span></div></div></div>
+      <div class="project-card"><div class="project-head" onclick="toggleProj(this)"><div><div class="project-head-title">Left vs. Left: CRT with His/LBBP vs. Biventricular Pacing (RCT)</div><div class="project-head-meta">2024–Present · PI · PCORI</div></div><span class="proj-tag proj-active">Active</span></div><div class="project-body"><p>Randomized trial comparing His/left bundle branch area pacing vs. biventricular pacing with LV epicardial lead in HF patients (LVEF ≤50%) with wide QRS or anticipated high pacing burden.</p></div></div>
+      <div class="project-card"><div class="project-head" onclick="toggleProj(this)"><div><div class="project-head-title">Improving Outpatient AF Care Across Central NC</div><div class="project-head-meta">2021–Present · PI · Bristol Myers Squibb Foundation · $1,169,615</div></div><span class="proj-tag proj-active">Active</span></div><div class="project-body"><p>System-wide program improving AFib care for underserved populations through care network, tele-mentoring for primary care providers, and digital health patient engagement tools.</p><div class="update-row"><span class="update-date">2023</span><span>AFib Integrated Care Clinic launched. Community provider training deployed.</span></div></div></div>
+      <div class="project-card"><div class="project-head" onclick="toggleProj(this)"><div><div class="project-head-title">Deep Learning Neural Network ECG Analysis for Heart Failure</div><div class="project-head-meta">2024–Present · PI · Investigator-Initiated</div></div><span class="proj-tag proj-active">Active</span></div><div class="project-body"><p>Applying deep neural networks to large ECG datasets to identify novel signatures of heart failure and arrhythmia risk, in collaboration with engineering faculty.</p><div class="update-row"><span class="update-date">2025</span><span>Li Y et al. "Adaptive model selection for real-time heart disease detection." IEEE Xplore. In press.</span></div></div></div>
     </div>
-
-    <div class="section">
-      <div class="section-title">Selected Completed Projects</div>
-
-      <div class="project-card">
-        <div class="project-head" onclick="toggleProj(this)">
-          <div>
-            <div class="project-head-title">A System-Wide AFib Care Pathway in the Emergency Department</div>
-            <div class="project-head-meta">2017 – 2021 · PI · Bristol Myers Squibb Foundation · $1,735,837</div>
-          </div>
-          <span class="proj-tag proj-complete">Complete</span>
-        </div>
-        <div class="project-body">
-          <p>Developed and implemented a novel care pathway for AFib patients presenting to the emergency department, reducing hospitalization rates from 80–85% nationally to 57% at UNC. Expanded to in-network hospitals and published in Circulation: Cardiovascular Quality and Outcomes (2023).</p>
-          <div class="update-row"><span class="update-date">2023</span><span>Gehi AK et al. Circ Cardiovasc Qual Outcomes. 2023 Sep; 16(9): e009808.</span></div>
-          <div class="update-row"><span class="update-date">2025</span><span>Mahmood R et al. "AF pathway reduces 30-day health service charges." J Am Heart Assoc. 2025.</span></div>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-head" onclick="toggleProj(this)">
-          <div>
-            <div class="project-head-title">Hybrid Epicardial–Endocardial Ablation for Atrial Fibrillation</div>
-            <div class="project-head-meta">2016 – Present · PI · Investigator-Initiated</div>
-          </div>
-          <span class="proj-tag proj-active">Ongoing</span>
-        </div>
-        <div class="project-body">
-          <p>Development and refinement of the pericardioscopic hybrid epicardial–endocardial approach to AF ablation. UNC is one of the primary centers performing this procedure, and we have contributed foundational technique papers and outcomes data to the literature.</p>
-          <div class="update-row"><span class="update-date">2013</span><span>Gehi AK et al. Heart Rhythm. 2013 Jan; 10(1): 22-8. Landmark technique paper.</span></div>
-        </div>
-      </div>
+    <div class="section"><div class="section-title">Completed — Landmark Projects</div>
+      <div class="project-card"><div class="project-head" onclick="toggleProj(this)"><div><div class="project-head-title">System-Wide AFib Care Pathway in the Emergency Department</div><div class="project-head-meta">2017–2021 · PI · BMS Foundation · $1,735,837</div></div><span class="proj-tag proj-complete">Complete</span></div><div class="project-body"><p>Developed and implemented a novel ED care pathway for AFib, reducing hospitalizations from 80–85% nationally to 57% at UNC. Expanded across in-network hospitals.</p><div class="update-row"><span class="update-date">2023</span><span>Gehi AK et al. Circ Cardiovasc Qual Outcomes. 2023;16(9):e009808.</span></div><div class="update-row"><span class="update-date">2025</span><span>Mahmood R et al. J Am Heart Assoc. 2025;14(5):e038756.</span></div></div></div>
+      <div class="project-card"><div class="project-head" onclick="toggleProj(this)"><div><div class="project-head-title">Hybrid Epicardial–Endocardial Ablation for Atrial Fibrillation</div><div class="project-head-meta">2016–Ongoing · PI · Investigator-Initiated</div></div><span class="proj-tag proj-active">Ongoing</span></div><div class="project-body"><p>Development of the pericardioscopic hybrid epicardial–endocardial approach to AF ablation. UNC is one of the primary centers performing this procedure nationally.</p><div class="update-row"><span class="update-date">2013</span><span>Gehi AK et al. Heart Rhythm. 2013;10(1):22-8. Landmark technique paper.</span></div></div></div>
     </div>
-
-    <div class="section">
-      <div class="section-title">Research Themes</div>
-      <div class="two-col">
-        <div>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Atrial_fibrillation_ECG_Lead_II.jpg/1280px-Atrial_fibrillation_ECG_Lead_II.jpg"
-               alt="AFib ECG"
-               class="feature-img" style="height:140px;" onerror="this.style.display:'none'">
-          <div class="img-caption">Atrial fibrillation surface ECG</div>
-        </div>
-        <div>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Pacemaker_lead_chest_xray.jpg/640px-Pacemaker_lead_chest_xray.jpg"
-               alt="Pacemaker leads"
-               class="feature-img" style="height:140px;" onerror="this.style.display:'none'">
-          <div class="img-caption">Pacemaker/ICD lead positioning</div>
-        </div>
-      </div>
-    </div>
-
   </div>
 </section>
 
-<!-- ━━━━━━━━━━━━━━━━━━━━━━━ CV ━━━━━━━━━━━━━━━━━━━━━━━ -->
+<!-- CV -->
 <section class="page" id="page-cv">
-  <div class="page-hero">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/UNC-CH_Medical_Center.jpg/1280px-UNC-CH_Medical_Center.jpg"
-         alt="UNC Medical Center" onerror="this.style.background='#13294b';">
-    <div class="page-hero-text">
-      <div class="page-hero-sub">Curriculum Vitae</div>
-      <div class="page-hero-title">Academic Record</div>
-    </div>
-  </div>
+  <div class="page-hero"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/UNC-CH_Medical_Center.jpg/1280px-UNC-CH_Medical_Center.jpg" alt="UNC" onerror="this.style.background='#13294b'"><div class="page-hero-text"><div class="page-hero-sub">Curriculum Vitae</div><div class="page-hero-title">Academic Record</div></div></div>
   <div class="page-content">
     <a href="#" class="cv-download-btn">↓ Download Full CV (PDF)</a>
-
-    <div class="section">
-      <div class="section-title">Academic Appointments</div>
-      <div class="cv-row">
-        <div class="cv-year">2023–Present</div>
-        <div><div class="cv-title">Professor of Medicine / Cardiology with Tenure</div>
-        <div class="cv-sub"><em>Sewell Family–McAllister Distinguished Professor in Electrophysiology</em></div>
-        <div class="cv-sub">University of North Carolina at Chapel Hill, Division of Cardiology</div></div>
-      </div>
-      <div class="cv-row">
-        <div class="cv-year">2017–Present</div>
-        <div><div class="cv-title">Director, Cardiac Electrophysiology</div>
-        <div class="cv-sub">UNC Division of Cardiology, Department of Medicine</div></div>
-      </div>
-      <div class="cv-row">
-        <div class="cv-year">2014–2023</div>
-        <div><div class="cv-title">Associate Professor of Medicine / Cardiology with Tenure</div>
-        <div class="cv-sub">University of North Carolina at Chapel Hill</div></div>
-      </div>
-      <div class="cv-row">
-        <div class="cv-year">2012–Present</div>
-        <div><div class="cv-title">Program Director, Fellowship in Clinical Cardiac Electrophysiology</div>
-        <div class="cv-sub">University of North Carolina at Chapel Hill</div></div>
-      </div>
-      <div class="cv-row">
-        <div class="cv-year">2008–2014</div>
-        <div><div class="cv-title">Assistant Professor of Medicine / Cardiology</div>
-        <div class="cv-sub">University of North Carolina at Chapel Hill</div></div>
-      </div>
+    <div class="section"><div class="section-title">Academic Appointments</div>
+      <div class="cv-row"><div class="cv-year">2023–Present</div><div><div class="cv-title">Professor of Medicine / Cardiology with Tenure</div><div class="cv-sub"><em>Sewell Family–McAllister Distinguished Professor in Electrophysiology</em></div><div class="cv-sub">UNC Chapel Hill, Division of Cardiology</div></div></div>
+      <div class="cv-row"><div class="cv-year">2017–Present</div><div><div class="cv-title">Director, Cardiac Electrophysiology</div><div class="cv-sub">UNC Division of Cardiology, Department of Medicine</div></div></div>
+      <div class="cv-row"><div class="cv-year">2014–2023</div><div><div class="cv-title">Associate Professor of Medicine / Cardiology with Tenure</div><div class="cv-sub">University of North Carolina at Chapel Hill</div></div></div>
+      <div class="cv-row"><div class="cv-year">2012–Present</div><div><div class="cv-title">Program Director, Fellowship in Clinical Cardiac Electrophysiology</div><div class="cv-sub">University of North Carolina at Chapel Hill</div></div></div>
+      <div class="cv-row"><div class="cv-year">2008–2014</div><div><div class="cv-title">Assistant Professor of Medicine / Cardiology</div><div class="cv-sub">University of North Carolina at Chapel Hill</div></div></div>
     </div>
-
-    <div class="section">
-      <div class="section-title">Education &amp; Training</div>
-      <div class="cv-row">
-        <div class="cv-year">2006–2008</div>
-        <div><div class="cv-title">Fellow in Cardiac Electrophysiology</div>
-        <div class="cv-sub">Emory University Medical Center · Director: Jonathan Langberg, MD</div></div>
-      </div>
-      <div class="cv-row">
-        <div class="cv-year">2003–2006</div>
-        <div><div class="cv-title">Fellow in General Cardiology, Investigator Track</div>
-        <div class="cv-sub">Mt. Sinai Medical Center · Valentin Fuster, MD, PhD, Director</div></div>
-      </div>
-      <div class="cv-row">
-        <div class="cv-year">2000–2003</div>
-        <div><div class="cv-title">Intern/Resident, Internal Medicine</div>
-        <div class="cv-sub">University of California San Francisco · Lee Goldman, MD, Director</div></div>
-      </div>
-      <div class="cv-row">
-        <div class="cv-year">1996–2000</div>
-        <div><div class="cv-title">Doctor of Medicine (MD)</div>
-        <div class="cv-sub">University of California San Francisco · <em>Graduated Alpha Omega Alpha (AOA)</em></div></div>
-      </div>
-      <div class="cv-row">
-        <div class="cv-year">1991–1996</div>
-        <div>
-          <div class="cv-title">M.Eng., Electrical Engineering &amp; Computer Science</div>
-          <div class="cv-title">B.S., Electrical Engineering; B.S., Music &amp; Theater Arts</div>
-          <div class="cv-sub">Massachusetts Institute of Technology · <em>Eta Kappa Nu (EE Honor Society)</em></div>
-          <div class="cv-sub"><em>Master's Thesis: "Somatotopic Mapping of Primary Somatosensory Cortex using fMRI"</em></div>
-        </div>
-      </div>
+    <div class="section"><div class="section-title">Education &amp; Training</div>
+      <div class="cv-row"><div class="cv-year">2006–2008</div><div><div class="cv-title">Fellow in Cardiac Electrophysiology</div><div class="cv-sub">Emory University Medical Center · Director: Jonathan Langberg, MD</div></div></div>
+      <div class="cv-row"><div class="cv-year">2003–2006</div><div><div class="cv-title">Fellow in General Cardiology, Investigator Track</div><div class="cv-sub">Mt. Sinai Medical Center · Valentin Fuster, MD, PhD, Director</div></div></div>
+      <div class="cv-row"><div class="cv-year">2000–2003</div><div><div class="cv-title">Intern/Resident, Internal Medicine</div><div class="cv-sub">University of California San Francisco · Lee Goldman, MD, Director</div></div></div>
+      <div class="cv-row"><div class="cv-year">1996–2000</div><div><div class="cv-title">Doctor of Medicine (MD)</div><div class="cv-sub">UCSF School of Medicine · <em>Graduated Alpha Omega Alpha (AOA)</em></div></div></div>
+      <div class="cv-row"><div class="cv-year">1991–1996</div><div><div class="cv-title">M.Eng. EECS · B.S. Electrical Engineering · B.S. Music &amp; Theater Arts</div><div class="cv-sub">Massachusetts Institute of Technology · <em>Eta Kappa Nu (EE Honor Society)</em></div></div></div>
     </div>
-
-    <div class="section">
-      <div class="section-title">Selected Honors &amp; Awards</div>
-      <div class="cv-row"><div class="cv-year">2023</div><div><div class="cv-title">Professor of Medicine with Tenure</div><div class="cv-sub">University of North Carolina at Chapel Hill</div></div></div>
+    <div class="section"><div class="section-title">Selected Honors &amp; Awards</div>
       <div class="cv-row"><div class="cv-year">2021</div><div><div class="cv-title">UNC Medical Center Quality and Safety Award</div></div></div>
-      <div class="cv-row"><div class="cv-year">2019</div><div><div class="cv-title">Leonard S. Gettes Faculty Teaching Award</div><div class="cv-sub">UNC Division of Cardiology</div></div></div>
+      <div class="cv-row"><div class="cv-year">2019</div><div><div class="cv-title">Leonard S. Gettes Faculty Teaching Award · UNC Division of Cardiology</div></div></div>
       <div class="cv-row"><div class="cv-year">2019</div><div><div class="cv-title">Sewell Family–McAllister Distinguished Professorship in Electrophysiology</div></div></div>
       <div class="cv-row"><div class="cv-year">2017</div><div><div class="cv-title">George Sheldon Research Award</div></div></div>
-      <div class="cv-row"><div class="cv-year">2016</div><div><div class="cv-title">ASHP Best Practices Award</div><div class="cv-sub">Optimizing management of ED patients with atrial fibrillation</div></div></div>
-      <div class="cv-row"><div class="cv-year">2011–Present</div><div><div class="cv-title">Voted Among Best Doctors in America</div></div></div>
-      <div class="cv-row"><div class="cv-year">2011–Present</div><div><div class="cv-title">Fellow, Heart Rhythm Society (FHRS)</div></div></div>
+      <div class="cv-row"><div class="cv-year">2016</div><div><div class="cv-title">ASHP Best Practices Award — ED AFib Management</div></div></div>
+      <div class="cv-row"><div class="cv-year">2011–Present</div><div><div class="cv-title">Voted Among Best Doctors in America · Fellow, Heart Rhythm Society (FHRS)</div></div></div>
     </div>
-
-    <div class="section">
-      <div class="section-title">Selected Grants — Investigator-Initiated (PI)</div>
-      <div class="cv-row"><div class="cv-year">2024–Present</div><div><div class="cv-title">PCORI — Left vs. Left RCT (CRT pacing modalities)</div><div class="cv-sub">Principal Investigator</div></div></div>
-      <div class="cv-row"><div class="cv-year">2023–Present</div><div><div class="cv-title">PCORI — REACT-AF Trial</div><div class="cv-sub">Principal Investigator</div></div></div>
-      <div class="cv-row"><div class="cv-year">2021–Present</div><div><div class="cv-title">Bristol Myers Squibb Foundation — Improving Outpatient AF Care, Central NC</div><div class="cv-sub">Principal Investigator · $1,169,615</div></div></div>
+    <div class="section"><div class="section-title">Selected Grants — PI</div>
+      <div class="cv-row"><div class="cv-year">2024–Present</div><div><div class="cv-title">PCORI — Left vs. Left RCT · Principal Investigator</div></div></div>
+      <div class="cv-row"><div class="cv-year">2023–Present</div><div><div class="cv-title">PCORI — REACT-AF Trial · Principal Investigator</div></div></div>
+      <div class="cv-row"><div class="cv-year">2021–Present</div><div><div class="cv-title">Bristol Myers Squibb Foundation — Improving Outpatient AF Care</div><div class="cv-sub">Principal Investigator · $1,169,615</div></div></div>
       <div class="cv-row"><div class="cv-year">2017–2021</div><div><div class="cv-title">Bristol Myers Squibb Foundation — System-Wide AFib Care Pathway</div><div class="cv-sub">Principal Investigator · $1,735,837</div></div></div>
-      <div class="cv-row"><div class="cv-year">2015</div><div><div class="cv-title">NC-Tracs Innovation Pilot Award — ED AFib Management</div><div class="cv-sub">Principal Investigator · $50,000</div></div></div>
+      <div class="cv-row"><div class="cv-year">2015</div><div><div class="cv-title">NC-Tracs Innovation Pilot Award · Principal Investigator · $50,000</div></div></div>
     </div>
-
-    <div class="section">
-      <div class="section-title">Books &amp; Book Chapters</div>
-      <div class="pub-entry">
-        <div class="pub-title">Minimally Invasive Atrial Ablation Surgery</div>
-        <div class="pub-authors">Gehi AK, Kiser AC. In: Minimally Invasive Cardiac Surgery: A Practical Guide. 2020: 325–49.</div>
-      </div>
-      <div class="pub-entry">
-        <div class="pub-title">Atrial Fibrillation – Rate versus Rhythm · Invasive Management of AF and AT · Cardiac Pacemakers and Defibrillators</div>
-        <div class="pub-authors">Baker M, Gehi AK et al. Netter's Cardiology. Saunders, 2018.</div>
-      </div>
-      <div class="pub-entry">
-        <div class="pub-title">Atrial Fibrillation · Cardiac Pacemakers and Defibrillators</div>
-        <div class="pub-authors">Gehi AK, Sanders WE, Mounsey JP. Netter's Cardiology. Saunders, 2010.</div>
-      </div>
-    </div>
-
   </div>
 </section>
 
-<!-- ━━━━━━━━━━━━━━━━━━━━━━━ PUBLICATIONS ━━━━━━━━━━━━━━━━━━━━━━━ -->
+<!-- PUBLICATIONS -->
 <section class="page" id="page-pubs">
-  <div class="page-hero">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Atrial_fibrillation_ECG_Lead_II.jpg/1280px-Atrial_fibrillation_ECG_Lead_II.jpg"
-         alt="ECG" onerror="this.style.background='#13294b';">
-    <div class="page-hero-text">
-      <div class="page-hero-sub">Scholarship</div>
-      <div class="page-hero-title">Publications</div>
-    </div>
-  </div>
+  <div class="page-hero"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Atrial_fibrillation_ECG_Lead_II.jpg/1280px-Atrial_fibrillation_ECG_Lead_II.jpg" alt="ECG" onerror="this.style.background='#13294b'"><div class="page-hero-text"><div class="page-hero-sub">Scholarship</div><div class="page-hero-title">Publications</div></div></div>
   <div class="page-content">
     <div class="pub-count-bar">
       <div class="pub-count"><span class="pub-count-num">70+</span><span>Original Articles</span></div>
-      <div class="pub-count"><span class="pub-count-num">5</span><span>Editorials / Letters</span></div>
-      <div class="pub-count"><span class="pub-count-num">60+</span><span>Conference Abstracts</span></div>
+      <div class="pub-count"><span class="pub-count-num">5</span><span>Editorials</span></div>
+      <div class="pub-count"><span class="pub-count-num">60+</span><span>Abstracts</span></div>
       <div class="pub-count"><span class="pub-count-num">6</span><span>Book Chapters</span></div>
     </div>
-
-    <div class="pub-filters">
-      <button class="filter-btn active" onclick="filterPubs('all',this)">All</button>
-      <button class="filter-btn" onclick="filterPubs('ms',this)">Original Articles</button>
-      <button class="filter-btn" onclick="filterPubs('ed',this)">Editorials</button>
-      <button class="filter-btn" onclick="filterPubs('ab',this)">Abstracts</button>
+    <div class="tab-nav">
+      <button class="tab-btn active" onclick="switchTab(this,'pubs-original')">Original Articles</button>
+      <button class="tab-btn" onclick="switchTab(this,'pubs-editorials')">Editorials &amp; Letters</button>
+      <button class="tab-btn" onclick="switchTab(this,'pubs-books')">Book Chapters</button>
+      <button class="tab-btn" onclick="switchTab(this,'pubs-abstracts')">Conference Abstracts</button>
     </div>
-
-    <div id="pubs-list">
-
-    <div class="section">
-      <div class="section-title">Original Research Articles — Selected Recent</div>
-
-      <div class="pub-entry" data-cat="ms">
-        <div class="pub-title"><span class="pub-tag tag-ms">Article</span>Disentangling the bidirectional relationship of atrial fibrillation and coronary events</div>
-        <div class="pub-authors">Gehi AK.</div>
-        <div class="pub-journal">Circ Cardiovasc Qual Outcomes · In press, 2025</div>
-      </div>
-      <div class="pub-entry" data-cat="ms">
-        <div class="pub-title"><span class="pub-tag tag-ms">Article</span>Determining the optimal age cutoff to investigate for cardiac sarcoidosis in patients with complete heart block</div>
-        <div class="pub-authors">Biyyala BR, Gehi AK, Mazzella AJ.</div>
-        <div class="pub-journal">Heart Rhythm · 2025 Jun 19; S1547-5271</div>
-      </div>
-      <div class="pub-entry" data-cat="ms">
-        <div class="pub-title"><span class="pub-tag tag-ms">Article</span>Machine Learning-based Prediction of Death and Hospitalization in Patients with Implantable Cardioverter Defibrillators</div>
-        <div class="pub-authors">Rosman L, Lampert R, Wang K, Gehi AK, et al.</div>
-        <div class="pub-journal">J Am Coll Cardiol · 2025 Jan 7; 85(1): 42–55</div>
-      </div>
-      <div class="pub-entry" data-cat="ms">
-        <div class="pub-title"><span class="pub-tag tag-ms">Article</span>An atrial fibrillation treatment pathway in the emergency department reduces median 30-day health service charges</div>
-        <div class="pub-authors">Mahmood R, Armbruster T, Jin W, Choudhury A, Rosman L, Mazzella AJ, et al., Gehi AK.</div>
-        <div class="pub-journal">J Am Heart Assoc · 2025 Mar 4; 14(5): e038756</div>
-      </div>
-      <div class="pub-entry" data-cat="ms">
-        <div class="pub-title"><span class="pub-tag tag-ms">Article</span>Wearable Devices, Healthcare Use, and Psychological Wellbeing in Patients with Atrial Fibrillation</div>
-        <div class="pub-authors">Rosman L, Lampert R, Zhuo S, Li Q, Varma N, Burg M, et al., Gehi AK.</div>
-        <div class="pub-journal">J Am Heart Assoc · 2024 Aug 6; 13(15): e033750</div>
-      </div>
-      <div class="pub-entry" data-cat="ms">
-        <div class="pub-title"><span class="pub-tag tag-ms">Article</span>Implementation of an atrial fibrillation decision aid care pathway in the emergency department reduces AFib hospitalizations</div>
-        <div class="pub-authors">Gehi AK, Armbruster T, Walker J, Rosman L, et al.</div>
-        <div class="pub-journal">Circ Cardiovasc Qual Outcomes · 2023 Sep; 16(9): e009808</div>
-      </div>
-      <div class="pub-entry" data-cat="ms">
-        <div class="pub-title"><span class="pub-tag tag-ms">Article</span>A patient-centered intervention reduces disparities in remote monitoring in patients with implanted cardiac devices</div>
-        <div class="pub-authors">Rosman L, Mazzella AJ, et al., Gehi AK, Lampert R.</div>
-        <div class="pub-journal">JACC Clin Electrophysiol · 2023 Nov; S2405-500X</div>
-      </div>
-      <div class="pub-entry" data-cat="ms">
-        <div class="pub-title"><span class="pub-tag tag-ms">Article</span>A systematic emergency department care protocol for syncope patients reduces admissions</div>
-        <div class="pub-authors">Wood BS, Craig MJ, Williamson M, Gehi AK.</div>
-        <div class="pub-journal">Am J Cardiol · 2023 Sep 1; 202: 160–162</div>
-      </div>
-      <div class="pub-entry" data-cat="ms">
-        <div class="pub-title"><span class="pub-tag tag-ms">Article</span>Arrhythmia risk during the 2016 US Presidential Election: the cost of stressful politics</div>
-        <div class="pub-authors">Rosman L, Salmoirago-Blotcher E, Mahmood R, et al., Gehi AK.</div>
-        <div class="pub-journal">J Am Heart Assoc · 2021 Jun; 10(11): e020559</div>
-      </div>
-      <div class="pub-entry" data-cat="ms">
-        <div class="pub-title"><span class="pub-tag tag-ms">Article</span>An atrial fibrillation transitions of care clinic improves atrial fibrillation quality metrics</div>
-        <div class="pub-authors">Abadie BQ, Hansen B, Walker J, Deyo Z, et al., Gehi AK.</div>
-        <div class="pub-journal">JACC Clin Electrophysiol · 2020 Jan; 6(1): 45–52</div>
-      </div>
-      <div class="pub-entry" data-cat="ms">
-        <div class="pub-title"><span class="pub-tag tag-ms">Article</span>Novel care pathway for patients presenting to the emergency department with atrial fibrillation</div>
-        <div class="pub-authors">Gehi AK, Deyo Z, Mendys P, et al.</div>
-        <div class="pub-journal">Circ Cardiovasc Qual Outcomes · 2018 Jan; 11(1): e004129</div>
-      </div>
-      <div class="pub-entry" data-cat="ms">
-        <div class="pub-title"><span class="pub-tag tag-ms">Article</span>Estimating cancer risk associated with ionizing radiation exposure during atrial fibrillation ablation</div>
-        <div class="pub-authors">Gehi AK, Shuryak I, Balter S, et al., Einstein AJ.</div>
-        <div class="pub-journal">JACC Clin Electrophysiol · 2017 Oct; 3(10): 1200–01</div>
-      </div>
-      <div class="pub-entry" data-cat="ms">
-        <div class="pub-title"><span class="pub-tag tag-ms">Article</span>Hybrid epicardial–endocardial ablation using a pericardioscopic technique for treatment of atrial fibrillation</div>
-        <div class="pub-authors">Gehi AK, Mounsey JP, Pursell I, et al., Kiser AC.</div>
-        <div class="pub-journal">Heart Rhythm · 2013 Jan; 10(1): 22–8</div>
-      </div>
-      <div class="pub-entry" data-cat="ms">
-        <div class="pub-title"><span class="pub-tag tag-ms">Article</span>Evaluation and management of patients after implantable cardioverter-defibrillator shock</div>
-        <div class="pub-authors">Gehi AK, Mehta D, Gomes JA.</div>
-        <div class="pub-journal">JAMA · 2006 Dec 20; 296(23): 2839–47</div>
-      </div>
-      <div class="pub-entry" data-cat="ms">
-        <div class="pub-title"><span class="pub-tag tag-ms">Article</span>Oral anticoagulant therapy prescription in atrial fibrillation across the spectrum of stroke risk: NCDR PINNACLE registry</div>
-        <div class="pub-authors">Hsu JC, Maddox TM, Kennedy KF, et al., Gehi AK, Turakhia MP, Marcus GM.</div>
-        <div class="pub-journal">JAMA Cardiol · 2016 Apr 1; 1(1): 55–62</div>
-      </div>
-      <div class="pub-entry" data-cat="ms">
-        <div class="pub-title"><span class="pub-tag tag-ms">Article</span>Depression and medication adherence in outpatients with coronary heart disease: Heart and Soul Study</div>
-        <div class="pub-authors">Gehi A, Haas D, Pipkin S, Whooley MA.</div>
-        <div class="pub-journal">Arch Intern Med · 2005 Nov 28; 165(21): 2508–13</div>
-      </div>
-      <div class="pub-entry" data-cat="ms">
-        <div class="pub-title"><span class="pub-tag tag-ms">Article</span>Microvolt T wave alternans for the risk stratification of ventricular tachyarrhythmic events: a meta-analysis</div>
-        <div class="pub-authors">Gehi AK, Stein RH, Metz LD, Gomes JA.</div>
-        <div class="pub-journal">J Am Coll Cardiol · 2005 Jul 5; 46(1): 75–82</div>
-      </div>
+    <div class="tab-pane active" id="pubs-original">
+      <div class="pub-entry"><div class="pub-title">Disentangling the bidirectional relationship of atrial fibrillation and coronary events</div><div class="pub-authors">Gehi AK.</div><div class="pub-journal">Circ Cardiovasc Qual Outcomes · In press, 2025</div></div>
+      <div class="pub-entry"><div class="pub-title">Determining the optimal age cutoff to investigate for cardiac sarcoidosis in complete heart block</div><div class="pub-authors">Biyyala BR, Gehi AK, Mazzella AJ.</div><div class="pub-journal">Heart Rhythm · 2025 Jun; S1547-5271</div></div>
+      <div class="pub-entry"><div class="pub-title">Machine Learning-based Prediction of Death and Hospitalization in Patients with ICDs</div><div class="pub-authors">Rosman L, Lampert R, Wang K, Gehi AK, et al.</div><div class="pub-journal">J Am Coll Cardiol · 2025 Jan 7; 85(1):42–55</div></div>
+      <div class="pub-entry"><div class="pub-title">An atrial fibrillation treatment pathway in the ED reduces median 30-day health service charges</div><div class="pub-authors">Mahmood R, Armbruster T, Jin W, et al., Gehi AK.</div><div class="pub-journal">J Am Heart Assoc · 2025 Mar 4; 14(5):e038756</div></div>
+      <div class="pub-entry"><div class="pub-title">Wearable devices, healthcare use, and psychological wellbeing in patients with atrial fibrillation</div><div class="pub-authors">Rosman L, Lampert R, Zhuo S, Li Q, et al., Gehi AK.</div><div class="pub-journal">J Am Heart Assoc · 2024 Aug 6; 13(15):e033750</div></div>
+      <div class="pub-entry"><div class="pub-title">Implementation of an AFib decision aid care pathway in the ED reduces hospitalizations</div><div class="pub-authors">Gehi AK, Armbruster T, Walker J, Rosman L, et al.</div><div class="pub-journal">Circ Cardiovasc Qual Outcomes · 2023 Sep; 16(9):e009808</div></div>
+      <div class="pub-entry"><div class="pub-title">A patient-centered intervention reduces disparities in remote monitoring in patients with cardiac devices</div><div class="pub-authors">Rosman L, Mazzella AJ, et al., Gehi AK, Lampert R.</div><div class="pub-journal">JACC Clin Electrophysiol · 2023 Nov</div></div>
+      <div class="pub-entry"><div class="pub-title">A systematic ED care protocol for syncope patients reduces admissions</div><div class="pub-authors">Wood BS, Craig MJ, Williamson M, Gehi AK.</div><div class="pub-journal">Am J Cardiol · 2023 Sep 1; 202:160–162</div></div>
+      <div class="pub-entry"><div class="pub-title">Arrhythmia risk during the 2016 US Presidential Election: the cost of stressful politics</div><div class="pub-authors">Rosman L, Salmoirago-Blotcher E, et al., Gehi AK.</div><div class="pub-journal">J Am Heart Assoc · 2021 Jun; 10(11):e020559</div></div>
+      <div class="pub-entry"><div class="pub-title">An atrial fibrillation transitions of care clinic improves AFib quality metrics</div><div class="pub-authors">Abadie BQ, Hansen B, Walker J, et al., Gehi AK.</div><div class="pub-journal">JACC Clin Electrophysiol · 2020 Jan; 6(1):45–52</div></div>
+      <div class="pub-entry"><div class="pub-title">Novel care pathway for patients presenting to the ED with atrial fibrillation</div><div class="pub-authors">Gehi AK, Deyo Z, Mendys P, et al.</div><div class="pub-journal">Circ Cardiovasc Qual Outcomes · 2018 Jan; 11(1):e004129</div></div>
+      <div class="pub-entry"><div class="pub-title">Oral anticoagulant therapy prescription in AFib across the spectrum of stroke risk: NCDR PINNACLE</div><div class="pub-authors">Hsu JC, Maddox TM, et al., Gehi AK, Turakhia MP, Marcus GM.</div><div class="pub-journal">JAMA Cardiol · 2016 Apr 1; 1(1):55–62</div></div>
+      <div class="pub-entry"><div class="pub-title">Estimating cancer risk associated with radiation exposure during AF ablation</div><div class="pub-authors">Gehi AK, Shuryak I, Balter S, et al., Einstein AJ.</div><div class="pub-journal">JACC Clin Electrophysiol · 2017 Oct; 3(10):1200–01</div></div>
+      <div class="pub-entry"><div class="pub-title">Hybrid epicardial–endocardial ablation using a pericardioscopic technique for treatment of AF</div><div class="pub-authors">Gehi AK, Mounsey JP, Pursell I, et al., Kiser AC.</div><div class="pub-journal">Heart Rhythm · 2013 Jan; 10(1):22–8</div></div>
+      <div class="pub-entry"><div class="pub-title">Evaluation and management of patients after implantable cardioverter-defibrillator shock</div><div class="pub-authors">Gehi AK, Mehta D, Gomes JA.</div><div class="pub-journal">JAMA · 2006 Dec 20; 296(23):2839–47</div></div>
+      <div class="pub-entry"><div class="pub-title">Microvolt T wave alternans for risk stratification of ventricular tachyarrhythmic events: a meta-analysis</div><div class="pub-authors">Gehi AK, Stein RH, Metz LD, Gomes JA.</div><div class="pub-journal">J Am Coll Cardiol · 2005 Jul 5; 46(1):75–82</div></div>
+      <div class="pub-entry"><div class="pub-title">Depression and medication adherence in outpatients with coronary heart disease: Heart and Soul Study</div><div class="pub-authors">Gehi A, Haas D, Pipkin S, Whooley MA.</div><div class="pub-journal">Arch Intern Med · 2005 Nov 28; 165(21):2508–13</div></div>
     </div>
-
-    <div class="section">
-      <div class="section-title">Editorials &amp; Letters</div>
-      <div class="pub-entry" data-cat="ed">
-        <div class="pub-title"><span class="pub-tag tag-ed">Editorial</span>High-resolution ECG for predicting ventricular arrhythmia in hypertrophic cardiomyopathy: another tool in the toolbox</div>
-        <div class="pub-authors">Gehi AK.</div>
-        <div class="pub-journal">J Am Heart Assoc · 2022 Dec 6; 11(23): e028095</div>
-      </div>
-      <div class="pub-entry" data-cat="ed">
-        <div class="pub-title"><span class="pub-tag tag-ed">Editorial</span>Are we coalescing on the best approach for hybrid ablation of atrial fibrillation?</div>
-        <div class="pub-authors">Gehi AK, Caranasos TG.</div>
-        <div class="pub-journal">JACC Clin Electrophysiol · 2020 Dec 14; 6(13): 1616–1618</div>
-      </div>
-      <div class="pub-entry" data-cat="ed">
-        <div class="pub-title"><span class="pub-tag tag-ed">Letter</span>Biventricular Pacing for AV Block and Systolic Dysfunction</div>
-        <div class="pub-authors">Baker M, Gehi AK.</div>
-        <div class="pub-journal">N Engl J Med · 2013 Aug 8; 369(6): 578</div>
-      </div>
-      <div class="pub-entry" data-cat="ed">
-        <div class="pub-title"><span class="pub-tag tag-ed">Letter</span>Primary prophylaxis with the ICD: the need for improved risk stratification</div>
-        <div class="pub-authors">Gehi A, Haas D, Fuster V.</div>
-        <div class="pub-journal">JAMA · 2005 Aug 24; 294(8): 958–60</div>
-      </div>
-      <div class="pub-entry" data-cat="ed">
-        <div class="pub-title"><span class="pub-tag tag-ed">Letter</span>Catheter ablation for atrial fibrillation in congestive heart failure</div>
-        <div class="pub-authors">Gehi AK, Mehta D.</div>
-        <div class="pub-journal">N Engl J Med · 2005 Mar 17; 352(11): 1148–9</div>
-      </div>
+    <div class="tab-pane" id="pubs-editorials">
+      <div class="pub-entry"><div class="pub-title"><span class="pub-tag tag-ed">Editorial</span>High-resolution ECG for predicting ventricular arrhythmia in hypertrophic cardiomyopathy</div><div class="pub-authors">Gehi AK.</div><div class="pub-journal">J Am Heart Assoc · 2022 Dec 6; 11(23):e028095</div></div>
+      <div class="pub-entry"><div class="pub-title"><span class="pub-tag tag-ed">Editorial</span>Are we coalescing on the best approach for hybrid ablation of atrial fibrillation?</div><div class="pub-authors">Gehi AK, Caranasos TG.</div><div class="pub-journal">JACC Clin Electrophysiol · 2020 Dec 14; 6(13):1616–1618</div></div>
+      <div class="pub-entry"><div class="pub-title"><span class="pub-tag tag-ed">Letter</span>Biventricular Pacing for AV Block and Systolic Dysfunction</div><div class="pub-authors">Baker M, Gehi AK.</div><div class="pub-journal">N Engl J Med · 2013 Aug 8; 369(6):578</div></div>
+      <div class="pub-entry"><div class="pub-title"><span class="pub-tag tag-ed">Letter</span>Primary prophylaxis with the ICD: the need for improved risk stratification</div><div class="pub-authors">Gehi A, Haas D, Fuster V.</div><div class="pub-journal">JAMA · 2005 Aug 24; 294(8):958–60</div></div>
+      <div class="pub-entry"><div class="pub-title"><span class="pub-tag tag-ed">Letter</span>Catheter ablation for atrial fibrillation in congestive heart failure</div><div class="pub-authors">Gehi AK, Mehta D.</div><div class="pub-journal">N Engl J Med · 2005 Mar 17; 352(11):1148–9</div></div>
     </div>
-
-    <div class="section">
-      <div class="section-title">Selected Conference Abstracts</div>
-      <div class="pub-entry" data-cat="ab">
-        <div class="pub-title"><span class="pub-tag tag-ab">Abstract</span>Effect of neighborhood-level deprivation on device management and outcomes</div>
-        <div class="pub-authors">Strickling J, Okeagu E, Mazzella A, Rosman L, et al., Gehi AK.</div>
-        <div class="pub-journal">Heart Rhythm Scientific Sessions · April 2025</div>
-      </div>
-      <div class="pub-entry" data-cat="ab">
-        <div class="pub-title"><span class="pub-tag tag-ab">Abstract</span>Identifying patients with highest potential benefit of LAA occlusion therapy using a novel competing risk scoring tool</div>
-        <div class="pub-authors">Mazzella AJ, Daubert TC, Jin W, Li Q, Gehi AK.</div>
-        <div class="pub-journal">Heart Rhythm Scientific Sessions · April 2025</div>
-      </div>
-      <div class="pub-entry" data-cat="ab">
-        <div class="pub-title"><span class="pub-tag tag-ab">Abstract</span>Self-pulse exam for atrial fibrillation screening: a randomized controlled trial</div>
-        <div class="pub-authors">Chilcutt M, Bazemore T, Armbruster T, et al., Gehi AK.</div>
-        <div class="pub-journal">Heart Rhythm Scientific Sessions · May 2023</div>
-      </div>
-      <div class="pub-entry" data-cat="ab">
-        <div class="pub-title"><span class="pub-tag tag-ab">Abstract</span>Implementation of an AF treatment pathway in the emergency department across in-network hospitals reduces AFib hospitalizations</div>
-        <div class="pub-authors">Aladesanmi O, Armbruster T, Biese K, et al., Gehi AK.</div>
-        <div class="pub-journal">Heart Rhythm 2022 · 19(5): S62</div>
-      </div>
-      <div class="pub-entry" data-cat="ab">
-        <div class="pub-title"><span class="pub-tag tag-ab">Abstract</span>A novel emergency department syncope protocol reduces unnecessary hospital admissions</div>
-        <div class="pub-authors">Wood B, Craig M, Williamson M, Gehi AK.</div>
-        <div class="pub-journal">Circulation · 2021; 144(1)</div>
-      </div>
-      <div class="pub-entry" data-cat="ab">
-        <div class="pub-title"><span class="pub-tag tag-ab">Abstract</span>Initial experience with trans-xiphoid hybrid endocardial and epicardial ablation for atrial fibrillation</div>
-        <div class="pub-authors">Gehi AK, Caranasos T, Mounsey JP, et al., Kiser A.</div>
-        <div class="pub-journal">Heart Rhythm · 2017; 14(5)</div>
-      </div>
+    <div class="tab-pane" id="pubs-books">
+      <div class="pub-entry"><div class="pub-title"><span class="pub-tag tag-book">Chapter</span>Minimally Invasive Atrial Ablation Surgery</div><div class="pub-authors">Gehi AK, Kiser AC.</div><div class="pub-journal">Minimally Invasive Cardiac Surgery: A Practical Guide · 2020: 325–49</div></div>
+      <div class="pub-entry"><div class="pub-title"><span class="pub-tag tag-book">Chapter</span>Atrial Fibrillation – Rate versus Rhythm</div><div class="pub-authors">Baker M, Gehi AK, Hummer JP, Mounsey JP.</div><div class="pub-journal">Netter's Cardiology · Saunders, 2018: 256–261</div></div>
+      <div class="pub-entry"><div class="pub-title"><span class="pub-tag tag-book">Chapter</span>Invasive Management – Atrial Fibrillation and Atrial Tachycardias</div><div class="pub-authors">Baker M, Gehi AK, Mounsey JP.</div><div class="pub-journal">Netter's Cardiology · Saunders, 2018: 269–274</div></div>
+      <div class="pub-entry"><div class="pub-title"><span class="pub-tag tag-book">Chapter</span>Cardiac Pacemakers and Defibrillators</div><div class="pub-authors">Gehi AK, Mounsey JP.</div><div class="pub-journal">Netter's Cardiology · Saunders, 2018: 302–308</div></div>
+      <div class="pub-entry"><div class="pub-title"><span class="pub-tag tag-book">Chapter</span>Atrial Fibrillation</div><div class="pub-authors">Gehi AK, Mounsey JP. In: Runge MS, Stouffer G, Patterson C, eds.</div><div class="pub-journal">Netter's Cardiology · Saunders, 2010: 233–9</div></div>
+      <div class="pub-entry"><div class="pub-title"><span class="pub-tag tag-book">Chapter</span>Cardiac Pacemakers and Defibrillators</div><div class="pub-authors">Gehi AK, Sanders WE, Mounsey JP. In: Runge MS, Stouffer G, Patterson C, eds.</div><div class="pub-journal">Netter's Cardiology · Saunders, 2010: 271–5</div></div>
     </div>
-
-    </div><!-- end pubs-list -->
+    <div class="tab-pane" id="pubs-abstracts">
+      <div class="pub-entry"><div class="pub-title"><span class="pub-tag tag-ab">Abstract</span>Effect of neighborhood-level deprivation on device management and outcomes</div><div class="pub-authors">Strickling J, Okeagu E, Mazzella A, et al., Gehi AK.</div><div class="pub-journal">Heart Rhythm Scientific Sessions · April 2025</div></div>
+      <div class="pub-entry"><div class="pub-title"><span class="pub-tag tag-ab">Abstract</span>Identifying patients with highest potential benefit of mechanical stroke prophylaxis using novel competing risk scoring</div><div class="pub-authors">Mazzella AJ, Daubert TC, Jin W, Li Q, Gehi AK.</div><div class="pub-journal">Heart Rhythm Scientific Sessions · April 2025</div></div>
+      <div class="pub-entry"><div class="pub-title"><span class="pub-tag tag-ab">Abstract</span>Self-pulse exam for atrial fibrillation screening: a randomized controlled trial</div><div class="pub-authors">Chilcutt M, Bazemore T, Armbruster T, et al., Gehi AK.</div><div class="pub-journal">Heart Rhythm Scientific Sessions · May 2023</div></div>
+      <div class="pub-entry"><div class="pub-title"><span class="pub-tag tag-ab">Abstract</span>Implementation of an AF treatment pathway across in-network hospitals reduces hospitalizations</div><div class="pub-authors">Aladesanmi O, Armbruster T, et al., Gehi AK.</div><div class="pub-journal">Heart Rhythm 2022 · 19(5):S62</div></div>
+      <div class="pub-entry"><div class="pub-title"><span class="pub-tag tag-ab">Abstract</span>A novel emergency department syncope protocol reduces unnecessary admissions</div><div class="pub-authors">Wood B, Craig M, Williamson M, Gehi AK.</div><div class="pub-journal">Circulation · 2021; 144(1)</div></div>
+      <div class="pub-entry"><div class="pub-title"><span class="pub-tag tag-ab">Abstract</span>Initial experience with trans-xiphoid hybrid endocardial and epicardial ablation for AF</div><div class="pub-authors">Gehi AK, Caranasos T, Mounsey JP, et al., Kiser A.</div><div class="pub-journal">Heart Rhythm · 2017; 14(5)</div></div>
+      <div class="pub-entry"><div class="pub-title"><span class="pub-tag tag-ab">Abstract</span>A novel care pathway for ED AFib patients reduces admission rate and length of stay</div><div class="pub-authors">Chen S, Biese K, Deyo Z, et al., Gehi AK.</div><div class="pub-journal">Circulation 2016 · 134(1)</div></div>
+      <div class="pub-entry"><div class="pub-title"><span class="pub-tag tag-ab">Abstract</span>Left atrial appendage occlusion for stroke prevention in non-valvular AF: a meta-analysis</div><div class="pub-authors">Bode WD, Patel N, Gehi AK.</div><div class="pub-journal">Circulation 2014 · 130(2)</div></div>
+    </div>
   </div>
 </section>
 
-<!-- ━━━━━━━━━━━━━━━━━━━━━━━ TEACHING & TALKS ━━━━━━━━━━━━━━━━━━━━━━━ -->
+<!-- TEACHING & TALKS -->
 <section class="page" id="page-talks">
-  <div class="page-hero">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/UNC-CH_Medical_Center.jpg/1280px-UNC-CH_Medical_Center.jpg"
-         alt="UNC" onerror="this.style.background:'#13294b';">
-    <div class="page-hero-text">
-      <div class="page-hero-sub">Education</div>
-      <div class="page-hero-title">Teaching &amp; Talks</div>
-    </div>
-  </div>
+  <div class="page-hero"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/UNC-CH_Medical_Center.jpg/1280px-UNC-CH_Medical_Center.jpg" alt="UNC" onerror="this.style.background='#13294b'"><div class="page-hero-text"><div class="page-hero-sub">Education</div><div class="page-hero-title">Teaching &amp; Talks</div></div></div>
   <div class="page-content">
-
-    <div class="section">
-      <div class="section-title">Ongoing Local Teaching</div>
-      <div class="talk-row">
-        <div class="talk-year">2024–Present</div>
-        <div>
-          <div class="talk-title">EKG Interpretation — L-Area AHEC Course Director</div>
-          <div class="talk-venue">Course Director · Aug 2024–Present</div>
-          <span class="talk-type tt-course">Course Director</span>
-        </div>
-      </div>
-      <div class="talk-row">
-        <div class="talk-year">2018–Present</div>
-        <div>
-          <div class="talk-title">EKG Reading — Medical Resident Lecture Series</div>
-          <div class="talk-venue">UNC School of Medicine · Annual</div>
-          <span class="talk-type tt-local">Local</span>
-        </div>
-      </div>
-      <div class="talk-row">
-        <div class="talk-year">2012–Present</div>
-        <div>
-          <div class="talk-title">Cardiac Arrhythmias — MS-I/II Annual Lecture Series</div>
-          <div class="talk-venue">UNC School of Medicine · Annual</div>
-          <span class="talk-type tt-local">Local</span>
-        </div>
-      </div>
-      <div class="talk-row">
-        <div class="talk-year">2008–Present</div>
-        <div>
-          <div class="talk-title">Weekly EKG Conference &amp; EP Conference</div>
-          <div class="talk-venue">UNC Cardiology · Ongoing</div>
-          <span class="talk-type tt-local">Local</span>
-        </div>
-      </div>
+    <div class="tab-nav">
+      <button class="tab-btn active" onclick="switchTab(this,'talks-grand')">Grand Rounds</button>
+      <button class="tab-btn" onclick="switchTab(this,'talks-regional')">Regional</button>
+      <button class="tab-btn" onclick="switchTab(this,'talks-local')">Local &amp; Ongoing</button>
+      <button class="tab-btn" onclick="switchTab(this,'talks-courses')">Course Director</button>
     </div>
-
-    <div class="section">
-      <div class="section-title">Grand Rounds — Selected</div>
-      <div class="talk-row">
-        <div class="talk-year">2023</div>
-        <div>
-          <div class="talk-title">Update in Atrial Fibrillation</div>
-          <div class="talk-venue">Internal Medicine Grand Rounds, Novant Health New Hanover Regional Medical Center, Wilmington, NC · October 18, 2023</div>
-          <span class="talk-type tt-grand">Grand Rounds</span>
-        </div>
-      </div>
-      <div class="talk-row">
-        <div class="talk-year">2023</div>
-        <div>
-          <div class="talk-title">Rate vs. Rhythm Control in Atrial Fibrillation — The Shifting Treatment Paradigm</div>
-          <div class="talk-venue">UNC Department of Medicine Grand Rounds · February 2, 2023</div>
-          <span class="talk-type tt-grand">Grand Rounds</span>
-        </div>
-      </div>
-      <div class="talk-row">
-        <div class="talk-year">2022</div>
-        <div>
-          <div class="talk-title">Device Management for the Non-Electrophysiologist</div>
-          <div class="talk-venue">UNC Department of Anesthesiology Grand Rounds · December 7, 2022</div>
-          <span class="talk-type tt-grand">Grand Rounds</span>
-        </div>
-      </div>
-      <div class="talk-row">
-        <div class="talk-year">2020</div>
-        <div>
-          <div class="talk-title">Update in Management of Atrial Fibrillation</div>
-          <div class="talk-venue">UNC Department of Medicine Grand Rounds · June 11, 2020</div>
-          <span class="talk-type tt-grand">Grand Rounds</span>
-        </div>
-      </div>
-      <div class="talk-row">
-        <div class="talk-year">2017</div>
-        <div>
-          <div class="talk-title">Tachycardia-Induced Cardiomyopathy</div>
-          <div class="talk-venue">UNC Department of Medicine Grand Rounds · February 9, 2017</div>
-          <span class="talk-type tt-grand">Grand Rounds</span>
-        </div>
-      </div>
-      <div class="talk-row">
-        <div class="talk-year">2015</div>
-        <div>
-          <div class="talk-title">Implantable Cardioverter Defibrillators for Prevention of SCD: Timing is Everything</div>
-          <div class="talk-venue">Oakwood / Beaumont Hospital, Dearborn, MI · September 2015</div>
-          <span class="talk-type tt-grand">Grand Rounds</span>
-        </div>
-      </div>
+    <div class="tab-pane active" id="talks-grand">
+      <div class="talk-row"><div class="talk-year">2023</div><div><div class="talk-title">Update in Atrial Fibrillation</div><div class="talk-venue">Internal Medicine Grand Rounds, Novant Health New Hanover Regional, Wilmington, NC · Oct 18, 2023</div><span class="talk-type tt-grand">Grand Rounds</span></div></div>
+      <div class="talk-row"><div class="talk-year">2023</div><div><div class="talk-title">Rate vs. Rhythm Control in AF — The Shifting Treatment Paradigm</div><div class="talk-venue">UNC Department of Medicine Grand Rounds · Feb 2, 2023</div><span class="talk-type tt-grand">Grand Rounds</span></div></div>
+      <div class="talk-row"><div class="talk-year">2022</div><div><div class="talk-title">Device Management for the Non-Electrophysiologist</div><div class="talk-venue">UNC Department of Anesthesiology Grand Rounds · Dec 7, 2022</div><span class="talk-type tt-grand">Grand Rounds</span></div></div>
+      <div class="talk-row"><div class="talk-year">2020</div><div><div class="talk-title">Update in Management of Atrial Fibrillation</div><div class="talk-venue">UNC Department of Medicine Grand Rounds · Jun 11, 2020</div><span class="talk-type tt-grand">Grand Rounds</span></div></div>
+      <div class="talk-row"><div class="talk-year">2018</div><div><div class="talk-title">Peri-Operative Device Management</div><div class="talk-venue">UNC Department of Anesthesiology Grand Rounds · Feb 28, 2018</div><span class="talk-type tt-grand">Grand Rounds</span></div></div>
+      <div class="talk-row"><div class="talk-year">2017</div><div><div class="talk-title">Tachycardia-Induced Cardiomyopathy</div><div class="talk-venue">UNC Department of Medicine Grand Rounds · Feb 9, 2017</div><span class="talk-type tt-grand">Grand Rounds</span></div></div>
+      <div class="talk-row"><div class="talk-year">2015</div><div><div class="talk-title">ICD for Prevention of SCD: Timing is Everything</div><div class="talk-venue">Oakwood / Beaumont Hospital, Dearborn, MI · Sep 23, 2015</div><span class="talk-type tt-grand">Grand Rounds</span></div></div>
+      <div class="talk-row"><div class="talk-year">2014</div><div><div class="talk-title">Stroke Prevention in AF: New Drugs and New Devices</div><div class="talk-venue">UNC Department of Medicine Grand Rounds · Apr 2014</div><span class="talk-type tt-grand">Grand Rounds</span></div></div>
+      <div class="talk-row"><div class="talk-year">2013</div><div><div class="talk-title">Update in AF: Novel Anticoagulants and Approaches to Ablation</div><div class="talk-venue">Moses Cone Hospital, Greensboro, NC · Oct 2013</div><span class="talk-type tt-grand">Grand Rounds</span></div></div>
+      <div class="talk-row"><div class="talk-year">2012</div><div><div class="talk-title">Update in the Management of Atrial Fibrillation</div><div class="talk-venue">UNC Department of Medicine Grand Rounds · Oct 2012</div><span class="talk-type tt-grand">Grand Rounds</span></div></div>
     </div>
-
-    <div class="section">
-      <div class="section-title">Regional Presentations — Selected</div>
-      <div class="talk-row">
-        <div class="talk-year">2024</div>
-        <div>
-          <div class="talk-title">Atrial Fibrillation: Consequences and Therapeutic Implications in CHF</div>
-          <div class="talk-venue">Heart Failure Management 2023 · July 2024</div>
-          <span class="talk-type tt-regional">Regional</span>
-        </div>
-      </div>
-      <div class="talk-row">
-        <div class="talk-year">2023</div>
-        <div>
-          <div class="talk-title">Update in Atrial Fibrillation</div>
-          <div class="talk-venue">2023 North Carolina Cardiovascular Update · October 2023</div>
-          <span class="talk-type tt-regional">Regional</span>
-        </div>
-      </div>
-      <div class="talk-row">
-        <div class="talk-year">2023</div>
-        <div>
-          <div class="talk-title">Update in Left Atrial Appendage Occlusion and AF Ablation</div>
-          <div class="talk-venue">NC/SC ACC Meeting · September 2023</div>
-          <span class="talk-type tt-regional">Regional</span>
-        </div>
-      </div>
-      <div class="talk-row">
-        <div class="talk-year">2022</div>
-        <div>
-          <div class="talk-title">Top 3 Trials in Electrophysiology</div>
-          <div class="talk-venue">2022 North Carolina Cardiovascular Update · October 2022</div>
-          <span class="talk-type tt-regional">Regional</span>
-        </div>
-      </div>
-      <div class="talk-row">
-        <div class="talk-year">2021</div>
-        <div>
-          <div class="talk-title">Cardiovascular Manifestations of COVID-19 and Long-COVID</div>
-          <div class="talk-venue">MAHEC COVID-19 ECHO · September 2021</div>
-          <span class="talk-type tt-regional">Regional</span>
-        </div>
-      </div>
-      <div class="talk-row">
-        <div class="talk-year">2021</div>
-        <div>
-          <div class="talk-title">Prevention of Sudden Cardiac Death</div>
-          <div class="talk-venue">2021 North Carolina Cardiovascular Update · October 2021</div>
-          <span class="talk-type tt-regional">Regional</span>
-        </div>
-      </div>
-      <div class="talk-row">
-        <div class="talk-year">2018</div>
-        <div>
-          <div class="talk-title">The Atrial Fibrillation Transitions of Care Network</div>
-          <div class="talk-venue">2018 Mid-Atlantic AHA Heart and Stroke Quality Summit · April 2018</div>
-          <span class="talk-type tt-regional">Regional</span>
-        </div>
-      </div>
-      <div class="talk-row">
-        <div class="talk-year">2016</div>
-        <div>
-          <div class="talk-title">Update in Anticoagulation for Atrial Fibrillation</div>
-          <div class="talk-venue">2016 Arrhythmia and Heart Failure Conference · April 2016</div>
-          <span class="talk-type tt-regional">Regional</span>
-        </div>
-      </div>
+    <div class="tab-pane" id="talks-regional">
+      <div class="talk-row"><div class="talk-year">2024</div><div><div class="talk-title">Atrial Fibrillation: Consequences and Therapeutic Implications in CHF</div><div class="talk-venue">Heart Failure Management 2023 · Jul 2024</div><span class="talk-type tt-regional">Regional</span></div></div>
+      <div class="talk-row"><div class="talk-year">2023</div><div><div class="talk-title">Update in Atrial Fibrillation</div><div class="talk-venue">2023 North Carolina Cardiovascular Update · Oct 2023</div><span class="talk-type tt-regional">Regional</span></div></div>
+      <div class="talk-row"><div class="talk-year">2023</div><div><div class="talk-title">Update in Left Atrial Appendage Occlusion and AF Ablation</div><div class="talk-venue">NC/SC ACC Meeting · Sep 2023</div><span class="talk-type tt-regional">Regional</span></div></div>
+      <div class="talk-row"><div class="talk-year">2022</div><div><div class="talk-title">Top 3 Trials in Electrophysiology</div><div class="talk-venue">2022 NC Cardiovascular Update · Oct 2022</div><span class="talk-type tt-regional">Regional</span></div></div>
+      <div class="talk-row"><div class="talk-year">2021</div><div><div class="talk-title">Cardiovascular Manifestations of COVID-19 and Long-COVID</div><div class="talk-venue">MAHEC COVID-19 ECHO · Sep 2021</div><span class="talk-type tt-regional">Regional</span></div></div>
+      <div class="talk-row"><div class="talk-year">2021</div><div><div class="talk-title">Prevention of Sudden Cardiac Death</div><div class="talk-venue">2021 NC Cardiovascular Update · Oct 2021</div><span class="talk-type tt-regional">Regional</span></div></div>
+      <div class="talk-row"><div class="talk-year">2021</div><div><div class="talk-title">Left Atrial Appendage Occlusion: Watchman and Lariat</div><div class="talk-venue">2021 Annual Internal Medicine Update · Mar 2021</div><span class="talk-type tt-regional">Regional</span></div></div>
+      <div class="talk-row"><div class="talk-year">2018</div><div><div class="talk-title">The AFib Transitions of Care Network</div><div class="talk-venue">2018 Mid-Atlantic AHA Heart and Stroke Quality Summit · Apr 2018</div><span class="talk-type tt-regional">Regional</span></div></div>
+      <div class="talk-row"><div class="talk-year">2016</div><div><div class="talk-title">Update in Anticoagulation for Atrial Fibrillation</div><div class="talk-venue">2016 Arrhythmia and Heart Failure Conference · Apr 2016</div><span class="talk-type tt-regional">Regional</span></div></div>
+      <div class="talk-row"><div class="talk-year">2014</div><div><div class="talk-title">Debate: Oral Anticoagulants — First Line for AF Stroke Prophylaxis</div><div class="talk-venue">2014 NC Cardiovascular Update · Oct 2014</div><span class="talk-type tt-regional">Regional</span></div></div>
     </div>
-
-    <div class="section">
-      <div class="section-title">Course Directorships</div>
-      <div class="talk-row">
-        <div class="talk-year">2019</div>
-        <div><div class="talk-title">UNC Update in Heart Failure and Clinical Electrophysiology</div><div class="talk-venue">March 2019</div><span class="talk-type tt-course">Course Director</span></div>
-      </div>
-      <div class="talk-row">
-        <div class="talk-year">2018</div>
-        <div><div class="talk-title">Integrated Care of the AF Patient · 2018 Southeastern CCEP Fellows Symposium</div><div class="talk-venue">Course Director / Co-Director · March 2018</div><span class="talk-type tt-course">Course Director</span></div>
-      </div>
-      <div class="talk-row">
-        <div class="talk-year">2016</div>
-        <div><div class="talk-title">UNC / ISMICS / HRS Heart Team Summit</div><div class="talk-venue">Course Co-Director · August 2016</div><span class="talk-type tt-course">Course Co-Director</span></div>
-      </div>
-      <div class="talk-row">
-        <div class="talk-year">2015</div>
-        <div><div class="talk-title">Essentials of ECG Interpretation · UNC / ISMICS / HRS Heart Team Summit</div><div class="talk-venue">Course Co-Director · 2015</div><span class="talk-type tt-course">Course Co-Director</span></div>
-      </div>
+    <div class="tab-pane" id="talks-local">
+      <div class="talk-row"><div class="talk-year">2024–Present</div><div><div class="talk-title">EKG Interpretation — L-Area AHEC</div><div class="talk-venue">Course Director · Aug 2024–Present</div><span class="talk-type tt-course">Course Director</span></div></div>
+      <div class="talk-row"><div class="talk-year">2018–Present</div><div><div class="talk-title">EKG Reading — Medical Resident Lecture Series</div><div class="talk-venue">UNC School of Medicine · Annual</div><span class="talk-type tt-local">Ongoing</span></div></div>
+      <div class="talk-row"><div class="talk-year">2012–Present</div><div><div class="talk-title">Cardiac Arrhythmias — MS-I/II Annual Lecture Series</div><div class="talk-venue">UNC School of Medicine · Annual</div><span class="talk-type tt-local">Ongoing</span></div></div>
+      <div class="talk-row"><div class="talk-year">2008–Present</div><div><div class="talk-title">Weekly EKG Conference &amp; EP Conference</div><div class="talk-venue">UNC Cardiology · Weekly</div><span class="talk-type tt-local">Ongoing</span></div></div>
+      <div class="talk-row"><div class="talk-year">2019–2020</div><div><div class="talk-title">Atrial Fibrillation and EKG Interpretation — TeleECHO™ Clinic</div><div class="talk-venue">Course Director · Jan–Jun 2020; May–Oct 2019</div><span class="talk-type tt-course">Course Director</span></div></div>
     </div>
-
+    <div class="tab-pane" id="talks-courses">
+      <div class="talk-row"><div class="talk-year">2019</div><div><div class="talk-title">UNC Update in Heart Failure and Clinical Electrophysiology</div><div class="talk-venue">Course Director · March 2019</div><span class="talk-type tt-course">Course Director</span></div></div>
+      <div class="talk-row"><div class="talk-year">2018</div><div><div class="talk-title">Integrated Care of the AF Patient</div><div class="talk-venue">Course Director · March 2018</div><span class="talk-type tt-course">Course Director</span></div></div>
+      <div class="talk-row"><div class="talk-year">2018</div><div><div class="talk-title">2018 Southeastern CCEP Fellows Symposium</div><div class="talk-venue">Course Co-Director · March 2018</div><span class="talk-type tt-course">Course Co-Director</span></div></div>
+      <div class="talk-row"><div class="talk-year">2016</div><div><div class="talk-title">UNC / ISMICS / HRS Heart Team Summit</div><div class="talk-venue">Course Co-Director · August 2016</div><span class="talk-type tt-course">Course Co-Director</span></div></div>
+      <div class="talk-row"><div class="talk-year">2015</div><div><div class="talk-title">Essentials of ECG Interpretation · UNC / ISMICS / HRS Heart Team Summit</div><div class="talk-venue">Course Co-Director · 2015</div><span class="talk-type tt-course">Course Co-Director</span></div></div>
+    </div>
   </div>
 </section>
 
-<!-- ━━━━━━━━━━━━━━━━━━━━━━━ EP FELLOWSHIP ━━━━━━━━━━━━━━━━━━━━━━━ -->
+<!-- EP FELLOWSHIP -->
 <section class="page" id="page-ep">
   <div class="ep-banner">
     <div class="ep-banner-label">Educational Program</div>
     <div class="ep-banner-title">UNC Clinical Cardiac Electrophysiology Fellowship</div>
-    <div class="ep-banner-desc">A 24-month ACGME-accredited training program in all aspects of cardiac electrophysiology. Dr. Gehi has served as Program Director since 2012, overseeing one of the primary referral centers for complex arrhythmias in the southeastern United States.</div>
+    <div class="ep-banner-desc">A 24-month ACGME-accredited training program in all aspects of cardiac electrophysiology. Dr. Gehi has served as Program Director since 2012, leading one of the primary referral centers for complex arrhythmias in the southeastern United States.</div>
   </div>
-
   <div class="page-content">
-
     <div class="ep-stat-row">
       <div class="ep-stat"><div class="ep-stat-num">2012</div><div class="ep-stat-label">Year Dr. Gehi became Program Director</div></div>
       <div class="ep-stat"><div class="ep-stat-num">24mo</div><div class="ep-stat-label">Program length (12 mo ACGME)</div></div>
-      <div class="ep-stat"><div class="ep-stat-num">SE US</div><div class="ep-stat-label">Primary referral center for complex arrhythmias</div></div>
+      <div class="ep-stat"><div class="ep-stat-num">SE US</div><div class="ep-stat-label">Primary referral center, complex arrhythmias</div></div>
       <div class="ep-stat"><div class="ep-stat-num">PGY-7+</div><div class="ep-stat-label">Entry level; follows gen cardiology fellowship</div></div>
     </div>
-
-    <div class="section">
-      <div class="section-title">Program Overview</div>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Catheter_ablation_of_atrial_fibrillation.jpg/1024px-Catheter_ablation_of_atrial_fibrillation.jpg"
-           alt="EP lab" class="inline-img" style="height:200px;" onerror="this.style.display:'none'">
-      <p style="font-size:0.87rem;line-height:1.85;color:#2a2420;">
-        The Clinical Cardiac Electrophysiology (CCEP) Fellowship at UNC provides comprehensive training in the evaluation and management of the full spectrum of cardiac arrhythmia conditions. Training is structured around ACGME core competencies and the HRS Clinical Competency Statement for fellowship training.
-      </p>
-      <p style="font-size:0.87rem;line-height:1.85;color:#2a2420;margin-top:12px;">
-        Fellows receive hands-on training in: catheter ablation for SVT, VT, atrial flutter, and atrial fibrillation (including epicardial approaches); pacemaker and ICD implantation; laser lead extraction; left atrial appendage occlusion; and EP study interpretation. The state-of-the-art facilities at UNC Medical Center provide fellows access to advanced technologies and high procedural volumes.
-      </p>
-      <p style="font-size:0.87rem;line-height:1.85;color:#2a2420;margin-top:12px;">
-        The educational program includes daily patient-care centered discussions, weekly didactic and electrogram conferences, journal club, and structured research mentorship. Dr. Gehi mentors fellows personally in research, with a strong track record of fellows going on to academic and clinical leadership positions.
-      </p>
+    <div class="tab-nav">
+      <button class="tab-btn active" onclick="switchTab(this,'ep-overview')">Overview</button>
+      <button class="tab-btn" onclick="switchTab(this,'ep-reading')">Reading List</button>
+      <button class="tab-btn" onclick="switchTab(this,'ep-seminal')">Seminal Articles</button>
+      <button class="tab-btn" onclick="switchTab(this,'ep-fellows')">Fellows &amp; Alumni</button>
     </div>
 
-    <div class="section">
-      <div class="section-title">Clinical Training Areas</div>
-      <div class="two-col">
-        <div>
-          <div style="margin-bottom:10px;font-size:0.85rem;line-height:1.8;">
-            <strong style="display:block;margin-bottom:6px;font-family:var(--mono);font-size:0.68rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--carolina-mid);">Ablation Procedures</strong>
-            Catheter ablation for paroxysmal and persistent AF · Hybrid epicardial–endocardial AF ablation · SVT ablation (AVNRT, AVRT, AT) · Ventricular tachycardia ablation · Atrial flutter ablation
-          </div>
-          <div style="font-size:0.85rem;line-height:1.8;">
-            <strong style="display:block;margin-bottom:6px;font-family:var(--mono);font-size:0.68rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--carolina-mid);">Device Therapy</strong>
-            Pacemaker implantation (single, dual, biventricular) · ICD implantation · Subcutaneous ICD · Conduction system pacing (His/LBBP) · Laser lead extraction · WATCHMAN LAA occlusion
-          </div>
+    <div class="tab-pane active" id="ep-overview">
+      <div class="section"><div class="section-title">Program Overview</div>
+        <div class="two-col" style="margin-bottom:20px">
+          <div><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Catheter_ablation_of_atrial_fibrillation.jpg/1024px-Catheter_ablation_of_atrial_fibrillation.jpg" class="feature-img" style="height:170px" alt="EP lab"><div class="img-caption">Catheter ablation procedure, UNC EP laboratory</div></div>
+          <div><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Atrial_fibrillation_ECG_Lead_II.jpg/1280px-Atrial_fibrillation_ECG_Lead_II.jpg" class="feature-img" style="height:170px" alt="AFib ECG"><div class="img-caption">Atrial fibrillation ECG — characteristic irregular rhythm</div></div>
         </div>
-        <div>
-          <div style="font-size:0.85rem;line-height:1.8;">
-            <strong style="display:block;margin-bottom:6px;font-family:var(--mono);font-size:0.68rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--carolina-mid);">Diagnostics &amp; Mapping</strong>
-            3D electroanatomic mapping (CARTO, EnSite) · EP study and induction protocols · Esophageal temperature monitoring · Remote cardiac monitoring interpretation
-          </div>
-          <div style="margin-top:10px;font-size:0.85rem;line-height:1.8;">
-            <strong style="display:block;margin-bottom:6px;font-family:var(--mono);font-size:0.68rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--carolina-mid);">Research &amp; Scholarship</strong>
-            Fellows are expected to complete at least one original research project resulting in a publication or abstract presentation. Protected time for research is available.
-          </div>
+        <p style="font-size:.87rem;line-height:1.85;color:#2a2420;margin-bottom:12px">The Clinical Cardiac Electrophysiology Fellowship at UNC provides comprehensive training in evaluation and management of the full spectrum of cardiac arrhythmia conditions. Training is structured around ACGME core competencies and the HRS Clinical Competency Statement.</p>
+        <p style="font-size:.87rem;line-height:1.85;color:#2a2420">Fellows receive hands-on training in catheter ablation (SVT, VT, AF, atrial flutter, epicardial approaches), pacemaker and ICD implantation, laser lead extraction, left atrial appendage occlusion, and EP study interpretation. The state-of-the-art UNC facilities and high procedural volume provide an outstanding training environment.</p>
+      </div>
+    </div>
+
+    <div class="tab-pane" id="ep-reading">
+      <p style="font-size:.83rem;color:var(--muted);margin-bottom:22px;font-style:italic">Curated by Tony Mazzella, MD (Fellow 2019–2021) · v1.0, January 2022. * = available on program thumb drive.</p>
+
+      <div class="reading-category">
+        <div class="reading-category-title">📐 Anatomy</div>
+        <div class="reading-item"><div class="reading-icon">📗</div><div><div class="reading-item-title"><span class="reading-tag rt-book">Textbook</span>Correlative Anatomy for the Electrophysiologist – Asirvatham *</div><div class="reading-item-note">Discusses relevant anatomic structures for common ablations with excellent relative anatomy focus. Dr. Syed authored some chapters during his time at Mayo.</div></div></div>
+        <div class="reading-item"><div class="reading-icon">📘</div><div><div class="reading-item-title"><span class="reading-tag rt-book">Textbook</span><a href="https://cardiotextpublishing.com/electrophysiology-heart-rhythm-mgmt/anatomy-for-cardiac-electrophysiologists-a-practical-handbook" target="_blank">Anatomy for Cardiac Electrophysiologists</a> – Ho/Ernst</div><div class="reading-item-note">Good introductory anatomy book. If choosing between this and the Atlas, choose the Atlas.</div></div></div>
+        <div class="reading-item"><div class="reading-icon">📙</div><div><div class="reading-item-title"><span class="reading-tag rt-book">Textbook</span><a href="https://cardiotextpublishing.com/electrophysiology-heart-rhythm-mgmt/atlas-of-cardiac-anatomy" target="_blank">Atlas of Cardiac Anatomy</a> – Mori/Shivkumar * <span style="color:var(--carolina-mid);font-size:.75rem">(Open Access — Free)</span></div><div class="reading-item-note">Fantastic anatomic atlas using the McAlpine dissections from UCLA. Open access and downloadable for free. A 2nd volume focusing on ablation is in progress.</div></div></div>
+      </div>
+
+      <div class="reading-category">
+        <div class="reading-category-title">📚 Basics (General Cardiology Fellowship)</div>
+        <div class="reading-item"><div class="reading-icon">📘</div><div><div class="reading-item-title"><span class="reading-tag rt-book">Textbook</span><a href="https://www.amazon.com/Practical-Clinical-Electrophysiology-Peter-Zimetbaum/dp/1496371070" target="_blank">Practical Clinical Electrophysiology</a> – Zimetbaum/Josephson</div><div class="reading-item-note">Good high-level introductory EP book. Discusses basic EP study mechanics and ablation strategies.</div></div></div>
+        <div class="reading-item"><div class="reading-icon">📘</div><div><div class="reading-item-title"><span class="reading-tag rt-book">Textbook</span><a href="https://www.amazon.com/Handbook-Cardiac-Electrophysiology-Practical-Invasive/dp/1901346374" target="_blank">Handbook of Cardiac Electrophysiology</a> – Murgatroyd *</div><div class="reading-item-note">A bit dated but ages well. Covers lab setup and basic catheters used in EP.</div></div></div>
+        <div class="reading-item"><div class="reading-icon">📘</div><div><div class="reading-item-title"><span class="reading-tag rt-book">Textbook</span><a href="https://cardiotextpublishing.com/electrophysiology-heart-rhythm-mgmt/cardiac-electrophysiology-second-edition-purves" target="_blank">Cardiac Electrophysiology</a> – Purves</div><div class="reading-item-note">Complementary to Murgatroyd. Lowest priority of the three basics.</div></div></div>
+      </div>
+
+      <div class="reading-category">
+        <div class="reading-category-title">📋 Board Preparation</div>
+        <div class="reading-item"><div class="reading-icon">🎬</div><div><div class="reading-item-title"><span class="reading-tag rt-video">Video</span>HRS Board Review Videos &amp; PowerPoints *</div><div class="reading-item-note">The best overall resource for EP boards. Complete the full series at least twice — once as an introduction, again near the in-training exam.</div></div></div>
+        <div class="reading-item"><div class="reading-icon">📋</div><div><div class="reading-item-title"><span class="reading-tag rt-article">Questions</span>EP SAP Key Points (ACC)</div><div class="reading-item-note">Additional question bank. Reviews vary. Private practice programs often pay for enrollment.</div></div></div>
+      </div>
+
+      <div class="reading-category">
+        <div class="reading-category-title">🔌 Devices</div>
+        <div class="reading-item"><div class="reading-icon">📗</div><div><div class="reading-item-title"><span class="reading-tag rt-book">Textbook</span>Cardiac Pacemakers and Resynchronization Step by Step – Barold *</div><div class="reading-item-note">Great for explaining basics of pacing/ICD mechanics. Cartoon-based style but solid content. Start here for devices.</div></div></div>
+        <div class="reading-item"><div class="reading-icon">📘</div><div><div class="reading-item-title"><span class="reading-tag rt-book">Textbook</span><a href="https://cardiotextpublishing.com/electrophysiology-heart-rhythm-mgmt/a-case-based-approach-to-pacemakers-icds-and-cardiac-resynchronization-questions-for-examination-review-and-clinical-practice-volume-1" target="_blank">Case-Based Approach to Pacemakers, ICDs &amp; CRT: Vols. 1, 2, 3</a> – Friedman/Hayes</div><div class="reading-item-note">Solid case-based device troubleshooting series. Vol. 1 is basic; Vol. 3 covers nuanced company-specific features. Ask Boston Scientific CRM to purchase.</div></div></div>
+        <div class="reading-item"><div class="reading-icon">📄</div><div><div class="reading-item-title"><span class="reading-tag rt-article">Papers</span>Ellenbogen Papers on Troubleshooting *</div><div class="reading-item-note">Excellent series frequently referenced at national meetings.</div></div></div>
+      </div>
+
+      <div class="reading-category">
+        <div class="reading-category-title">📊 Electrograms (review in this order)</div>
+        <div class="reading-item"><div class="reading-icon">📘</div><div><div class="reading-item-title"><span class="reading-tag rt-book">Textbook</span><a href="https://www.amazon.com/Electrophysiological-Maneuvers-Arrhythmia-Analysis-George/dp/1935395890" target="_blank">Electrophysiological Maneuvers for Arrhythmia Analysis</a> – Klein</div><div class="reading-item-note">Case-based introduction to EP maneuvers and interpretation. Great starting place.</div></div></div>
+        <div class="reading-item"><div class="reading-icon">📗</div><div><div class="reading-item-title"><span class="reading-tag rt-book">Textbook</span><a href="https://www.amazon.com/Clinical-Arrhythmology-Electrophysiology-Companion-Braunwalds/dp/0323523560" target="_blank">Clinical Arrhythmology and Electrophysiology: Companion to Braunwald's</a> *</div><div class="reading-item-note">Focus on SVT chapters 17–20. Chapter 20 is an excellent summary for approaching the unknown SVT at EPS.</div></div></div>
+        <div class="reading-item"><div class="reading-icon">📘</div><div><div class="reading-item-title"><span class="reading-tag rt-book">Textbook</span><a href="https://www.amazon.com/Essential-Concepts-Electrophysiology-through-Studies/dp/1935395335" target="_blank">Essential Concepts of Electrophysiology through Case Studies: Intracardiac EGMs</a> – Ellenbogen</div><div class="reading-item-note">Good follow-up to Klein. Ellenbogen often gives copies away at HRS each year.</div></div></div>
+        <div class="reading-item"><div class="reading-icon">📙</div><div><div class="reading-item-title"><span class="reading-tag rt-book">Textbook</span><a href="https://www.amazon.com/Clinical-Electrophysiology-Review-Second-George/dp/0071781064" target="_blank">Clinical Electrophysiology Review</a> – Klein/Prystowsky</div><div class="reading-item-note">Final case-based review. More difficult — save for 2nd year. Very relevant for EP boards.</div></div></div>
+      </div>
+
+      <div class="reading-category">
+        <div class="reading-category-title">🔬 Procedures</div>
+        <div class="reading-item"><div class="reading-icon">🌐</div><div><div class="reading-item-title"><span class="reading-tag rt-online">Online</span><a href="https://www.heartrhythmjournal.com/content/hands_on" target="_blank">HRS Hands-On Series</a> – Heart Rhythm Journal</div><div class="reading-item-note">Wonderful how-to series covering almost any EP procedure. Review before the first few times you do a new case type.</div></div></div>
+        <div class="reading-item"><div class="reading-icon">📄</div><div><div class="reading-item-title"><span class="reading-tag rt-article">Guide</span>Medtronic LBBAP Guide *</div><div class="reading-item-note">Step-by-step guide for LBBAP. Medtronic has the only FDA-approved equipment (3830 lead) for LBBAP at time of writing.</div></div></div>
+        <div class="reading-item"><div class="reading-icon">📄</div><div><div class="reading-item-title"><span class="reading-tag rt-article">Paper</span>ESC Best Practices on Device Implantation *</div><div class="reading-item-note">Great paper with accompanying videos on CIED implantation. Review before your first implants.</div></div></div>
+      </div>
+
+      <div class="reading-category">
+        <div class="reading-category-title">📖 Reference Texts</div>
+        <div class="reading-item"><div class="reading-icon">📗</div><div><div class="reading-item-title"><span class="reading-tag rt-book">Textbook</span><a href="https://www.amazon.com/Josephsons-Clinical-Cardiac-Electrophysiology-Interpretations/dp/1975115562" target="_blank">Josephson's Clinical Cardiac Electrophysiology</a> – Callans</div><div class="reading-item-note">Considered by many to be the ultimate EP reference.</div></div></div>
+        <div class="reading-item"><div class="reading-icon">📙</div><div><div class="reading-item-title"><span class="reading-tag rt-book">Textbook</span><a href="https://www.amazon.com/Catheter-Ablation-Cardiac-Arrhythmias-Stephen/dp/0323529925" target="_blank">Catheter Ablation of Cardiac Arrhythmias</a> – Huang/Miller *</div><div class="reading-item-note">Great reference for physiology and procedural basics. Each ablation type has its own chapter.</div></div></div>
+      </div>
+
+      <div class="reading-category">
+        <div class="reading-category-title">🌐 Online Resources &amp; Courses</div>
+        <div class="reading-item"><div class="reading-icon">📄</div><div><div class="reading-item-title"><span class="reading-tag rt-article">Series</span>Fundamental Concepts in Electrophysiology Series – Asirvatham/Stephenson *</div><div class="reading-item-note">Landmark discoveries in EP physiology and procedural technique. Great primer and history of the field.</div></div></div>
+        <div class="reading-item"><div class="reading-icon">🎬</div><div><div class="reading-item-title"><span class="reading-tag rt-video">Video</span>Northwestern Morning-Report EP Lecture Series *</div><div class="reading-item-note">Put together by Brad Knight at Northwestern during COVID. Dozens of high-yield topics. Great for your commute.</div></div></div>
+        <div class="reading-item"><div class="reading-icon">🌐</div><div><div class="reading-item-title"><span class="reading-tag rt-online">Online</span><a href="https://www.medtronicacademy.com/" target="_blank">Medtronic Academy</a></div><div class="reading-item-note">Great collection of educational materials and videos. The Josephson and Wellens lectures are essential viewing.</div></div></div>
+        <div class="reading-item"><div class="reading-icon">💡</div><div><div class="reading-item-title">Free Textbook Opportunities</div><div class="reading-item-note">Medtronic, Abbott, and Boston Scientific all provide free textbooks yearly for EP fellows. The worst they can say is "no."</div></div></div>
+        <div class="reading-item"><div class="reading-icon">🏥</div><div><div class="reading-item-title">Recommended Courses</div><div class="reading-item-note">Biotronik courses (Philly, NY, Nashville, international) · Medtronic Micra course · EP 101 (Boston Scientific) · Any event where Asirvatham is doing a cardiac dissection · Any event where Shivkumar and/or Tung are talking anatomy</div></div></div>
+      </div>
+    </div>
+
+    <div class="tab-pane" id="ep-seminal">
+      <p style="font-size:.84rem;color:var(--muted);margin-bottom:22px">The foundational literature of cardiac electrophysiology — landmark trials and papers that established the scientific basis for modern EP practice, from the 1980s to present.</p>
+
+      <div class="seminal-era">
+        <div class="seminal-era-title"><span class="era-badge">1980s</span>Foundations of Clinical EP &amp; Risk Stratification</div>
+        <div class="pub-entry"><div class="pub-title"><span class="pub-tag tag-seminal">Seminal</span>Electrophysiologic testing to identify patients with CAD who are at risk for sudden death</div><div class="pub-authors">Josephson ME, Horowitz LN, Spielman SR, Greenspan AM.</div><div class="pub-journal">N Engl J Med · 1982 — landmark paper establishing EPS for VT risk stratification</div></div>
+        <div class="pub-entry"><div class="pub-title"><span class="pub-tag tag-seminal">Seminal</span>A prospective study of sudden death in patients with coronary artery disease</div><div class="pub-authors">Bigger JT Jr et al.</div><div class="pub-journal">N Engl J Med · 1984 — established NSVT and LV dysfunction as risk factors for sudden death</div></div>
+        <div class="pub-entry"><div class="pub-title"><span class="pub-tag tag-seminal">Seminal</span>The long QT syndrome: prospective longitudinal study of 328 families</div><div class="pub-authors">Schwartz PJ et al.</div><div class="pub-journal">Circulation · 1985 — defined the Schwartz score and LQTS risk stratification</div></div>
+        <div class="pub-entry"><div class="pub-title"><span class="pub-tag tag-seminal">Seminal</span>Clinical Cardiac Electrophysiology: Techniques and Interpretations (1st edition)</div><div class="pub-authors">Josephson ME.</div><div class="pub-journal">Lea &amp; Febiger · 1979/1985 — the foundational EP reference text</div></div>
+      </div>
+
+      <div class="seminal-era">
+        <div class="seminal-era-title"><span class="era-badge">1990s</span>ICD Trials, Ablation, and Antiarrhythmic Drug Trials</div>
+        <div class="pub-entry"><div class="pub-title"><span class="pub-tag tag-seminal">Seminal</span>CAST: Cardiac Arrhythmia Suppression Trial — effect of encainide, flecainide, and moricizine on mortality</div><div class="pub-authors">Echt DS, Liebson PR, Mitchell LB, et al.</div><div class="pub-journal">N Engl J Med · 1991 — demonstrated harm of antiarrhythmic drugs post-MI; transformed the field</div></div>
+        <div class="pub-entry"><div class="pub-title"><span class="pub-tag tag-seminal">Seminal</span>Radiofrequency catheter ablation of accessory atrioventricular connections in 250 patients</div><div class="pub-authors">Jackman WM, Wang XZ, Friday KJ, et al.</div><div class="pub-journal">N Engl J Med · 1991 — established RF ablation as curative therapy for WPW and SVT</div></div>
+        <div class="pub-entry"><div class="pub-title"><span class="pub-tag tag-seminal">Seminal</span>MADIT: Improved survival with an implanted defibrillator in patients at high risk for ventricular arrhythmia</div><div class="pub-authors">Moss AJ, Hall WJ, Cannom DS, et al.</div><div class="pub-journal">N Engl J Med · 1996 — first RCT showing ICD survival benefit in primary prevention</div></div>
+        <div class="pub-entry"><div class="pub-title"><span class="pub-tag tag-seminal">Seminal</span>AVID: Antiarrhythmic-drug therapy vs. implantable defibrillators in near-fatal ventricular arrhythmias</div><div class="pub-authors">The AVID Investigators.</div><div class="pub-journal">N Engl J Med · 1997 — pivotal trial establishing ICD superiority in secondary prevention</div></div>
+        <div class="pub-entry"><div class="pub-title"><span class="pub-tag tag-seminal">Seminal</span>MADIT-II: Prophylactic ICD implantation in patients with MI and reduced ejection fraction</div><div class="pub-authors">Moss AJ, Zareba W, Hall WJ, et al.</div><div class="pub-journal">N Engl J Med · 2002 — expanded primary prevention ICD indications to EF ≤30%</div></div>
+      </div>
+
+      <div class="seminal-era">
+        <div class="seminal-era-title"><span class="era-badge">2000s</span>AF Ablation, CRT, and Modern Anticoagulation</div>
+        <div class="pub-entry"><div class="pub-title"><span class="pub-tag tag-seminal">Seminal</span>Spontaneous initiation of atrial fibrillation by ectopic beats originating in the pulmonary veins</div><div class="pub-authors">Haïssaguerre M, Jaïs P, Shah DC, et al.</div><div class="pub-journal">N Engl J Med · 1998 — landmark paper identifying PVs as AF triggers; launched the ablation era</div></div>
+        <div class="pub-entry"><div class="pub-title"><span class="pub-tag tag-seminal">Seminal</span>SCD-HeFT: Amiodarone or an ICD for congestive heart failure</div><div class="pub-authors">Bardy GH, Lee KL, Mark DB, et al.</div><div class="pub-journal">N Engl J Med · 2005 — definitive trial establishing ICD benefit in nonischemic cardiomyopathy</div></div>
+        <div class="pub-entry"><div class="pub-title"><span class="pub-tag tag-seminal">Seminal</span>CARE-HF: Cardiac resynchronization in heart failure</div><div class="pub-authors">Cleland JGF, Daubert JC, Erdmann E, et al.</div><div class="pub-journal">N Engl J Med · 2005 — established CRT mortality benefit in HFrEF with LBBB</div></div>
+        <div class="pub-entry"><div class="pub-title"><span class="pub-tag tag-seminal">Seminal</span>AFFIRM: Rate control vs. rhythm control in patients with atrial fibrillation</div><div class="pub-authors">Wyse DG, Waldo AL, DiMarco JP, et al.</div><div class="pub-journal">N Engl J Med · 2002 — defined the rate vs. rhythm control strategy debate</div></div>
+        <div class="pub-entry"><div class="pub-title"><span class="pub-tag tag-seminal">Seminal</span>Circumferential pulmonary-vein ablation for chronic atrial fibrillation</div><div class="pub-authors">Pappone C, Rosanio S, Augello G, et al.</div><div class="pub-journal">N Engl J Med · 2006 — established PVI as cornerstone of AF ablation strategy</div></div>
+        <div class="pub-entry"><div class="pub-title"><span class="pub-tag tag-seminal">Seminal</span>RE-LY: Dabigatran versus warfarin in patients with atrial fibrillation</div><div class="pub-authors">Connolly SJ, Ezekowitz MD, Yusuf S, et al.</div><div class="pub-journal">N Engl J Med · 2009 — pivotal NOAC trial that transformed stroke prevention in AF</div></div>
+      </div>
+
+      <div class="seminal-era">
+        <div class="seminal-era-title"><span class="era-badge">2010s–2020s</span>Modern EP: Ablation Trials, Digital Health, Conduction System Pacing</div>
+        <div class="pub-entry"><div class="pub-title"><span class="pub-tag tag-seminal">Seminal</span>PROTECT-AF: Watchman LAA closure vs. warfarin for stroke prophylaxis in AF</div><div class="pub-authors">Holmes DR, Reddy VY, Turi ZG, et al.</div><div class="pub-journal">Lancet · 2009/2014 — pivotal trial establishing LAA occlusion as alternative to anticoagulation</div></div>
+        <div class="pub-entry"><div class="pub-title"><span class="pub-tag tag-seminal">Seminal</span>CASTLE-AF: Catheter ablation in patients with AF and heart failure</div><div class="pub-authors">Marrouche NF, Brachmann J, Andresen D, et al.</div><div class="pub-journal">N Engl J Med · 2018 — showed AF ablation reduces mortality in patients with HF</div></div>
+        <div class="pub-entry"><div class="pub-title"><span class="pub-tag tag-seminal">Seminal</span>CABANA: Catheter ablation vs. antiarrhythmic drug therapy for AF</div><div class="pub-authors">Packer DL, Mark DB, Robb RA, et al.</div><div class="pub-journal">JAMA · 2019 — largest RCT of AF ablation; neutral primary endpoint with important subgroup findings</div></div>
+        <div class="pub-entry"><div class="pub-title"><span class="pub-tag tag-seminal">Seminal</span>EAST-AFNET 4: Early rhythm-control therapy in patients with atrial fibrillation</div><div class="pub-authors">Kirchhof P, Camm AJ, Goette A, et al.</div><div class="pub-journal">N Engl J Med · 2020 — demonstrated benefit of early rhythm control strategy</div></div>
+        <div class="pub-entry"><div class="pub-title"><span class="pub-tag tag-seminal">Seminal</span>LEGACY: Effect of weight reduction and cardiometabolic risk factor management on AF</div><div class="pub-authors">Pathak RK, Middeldorp ME, Lau DH, et al.</div><div class="pub-journal">J Am Coll Cardiol · 2015 — showed weight loss as a modifiable risk factor reducing AF burden</div></div>
+        <div class="pub-entry"><div class="pub-title"><span class="pub-tag tag-seminal">Seminal</span>His-SYNC: His bundle pacing vs. biventricular pacing for cardiac resynchronization</div><div class="pub-authors">Lustgarten DL, Crespo EM, Aruda-Olson A, et al.</div><div class="pub-journal">Heart Rhythm · 2015 — early trial establishing feasibility of His bundle pacing for CRT</div></div>
+      </div>
+    </div>
+
+    <div class="tab-pane" id="ep-fellows">
+      <div class="section"><div class="section-title">Former EP Fellows — Selected Alumni</div>
+        <div class="fellow-grid">
+          <div class="fellow-card"><div class="fellow-name">Tony Mazzella, MD, FHRS, FACC</div><div class="fellow-year">Fellow 2019–2021</div><div class="fellow-now">Faculty, UNC Division of Cardiology</div></div>
+          <div class="fellow-card"><div class="fellow-name">Rafat Mahmood, MD</div><div class="fellow-year">Fellow 2019–2021</div><div class="fellow-now">Clinical EP, private practice</div></div>
+          <div class="fellow-card"><div class="fellow-name">Zack Tugaoen, MD</div><div class="fellow-year">Fellow 2020–2021</div><div class="fellow-now">Clinical EP</div></div>
+          <div class="fellow-card"><div class="fellow-name">Bryan Abadie, MD</div><div class="fellow-year">Fellow 2018–2019</div><div class="fellow-now">Clinical EP</div></div>
+          <div class="fellow-card"><div class="fellow-name">Prabhat Kumar, MBBS</div><div class="fellow-year">Fellow 2011–2013</div><div class="fellow-now">Academic EP faculty</div></div>
+          <div class="fellow-card"><div class="fellow-name">Murrium Sadaf, MD</div><div class="fellow-year">Earlier cohort</div><div class="fellow-now">Academic EP</div></div>
         </div>
       </div>
-    </div>
-
-    <div class="section">
-      <div class="section-title">Former Fellows — Selected Alumni</div>
-      <div class="fellow-grid">
-        <div class="fellow-card"><div class="fellow-name">Tony Mazzella, MD</div><div class="fellow-year">Fellow 2019–2021</div><div class="fellow-now">Faculty, UNC Cardiology</div></div>
-        <div class="fellow-card"><div class="fellow-name">Rafat Mahmood, MD</div><div class="fellow-year">Fellow 2019–2021</div><div class="fellow-now">Private practice EP</div></div>
-        <div class="fellow-card"><div class="fellow-name">Zack Tugaoen, MD</div><div class="fellow-year">Fellow 2020–2021</div><div class="fellow-now">Clinical EP</div></div>
-        <div class="fellow-card"><div class="fellow-name">Bryan Abadie, MD</div><div class="fellow-year">Fellow 2018–2019</div><div class="fellow-now">Clinical EP</div></div>
-        <div class="fellow-card"><div class="fellow-name">Prabhat Kumar, MBBS</div><div class="fellow-year">Fellow 2011–2013</div><div class="fellow-now">Faculty, EP</div></div>
-        <div class="fellow-card"><div class="fellow-name">Murrium Sadaf, MD</div><div class="fellow-year">Earlier cohort</div><div class="fellow-now">Academic EP</div></div>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="section-title">Educational Materials &amp; Publications</div>
-      <div class="pub-entry">
-        <div class="pub-title">Atrial fibrillation and EKG interpretation — TeleECHO™ clinic</div>
-        <div class="pub-authors">Course Director — Jan–Jun 2020; May–Oct 2019</div>
-        <div class="pub-journal">Community provider tele-mentoring program · UNC</div>
-      </div>
-      <div class="pub-entry">
-        <div class="pub-title">Development and feasibility of a primary care provider training intervention to improve AF management</div>
-        <div class="pub-authors">Daw JM, Armbruster T, Deyo Z, et al., Gehi AK.</div>
-        <div class="pub-journal">Am J Cardiol · 2023 Nov 15; 207: 184–191</div>
-      </div>
-      <div class="pub-entry">
-        <div class="pub-title">Assessing a virtual education intervention for patients with AF: a qualitative study</div>
-        <div class="pub-authors">Mihas P, Rosman L, Armbruster T, et al., Gehi AK.</div>
-        <div class="pub-journal">J Cardiovasc Nurs · 2023 Apr 24</div>
-      </div>
-      <div class="pub-entry">
-        <div class="pub-title">Patient perspectives on performance of a smartphone app for AF self-management</div>
-        <div class="pub-authors">Mihas P, Rosman L, Armbruster T, et al., Gehi AK.</div>
-        <div class="pub-journal">Patient Prefer Adherence · 2022 Oct 18; 16: 2799–2810</div>
-      </div>
-      <div class="pub-entry">
-        <div class="pub-title">2018 Southeastern CCEP Fellows Symposium · UNC/ISMICS/HRS Heart Team Summits (2015, 2016)</div>
-        <div class="pub-authors">Course Co-Director</div>
-        <div class="pub-journal">Regional EP education for fellows-in-training</div>
+      <div class="section"><div class="section-title">Current Trainees</div>
+        <div class="fellow-grid">
+          <div class="fellow-card"><div class="fellow-name">Abhinav Shankar</div><div class="fellow-year">Research Mentee · 2024–Present</div><div class="fellow-now">Project in progress</div></div>
+          <div class="fellow-card"><div class="fellow-name">Benjamin Chilcutt, MD</div><div class="fellow-year">Research Mentee · 2023–2025</div><div class="fellow-now">HRS abstract; manuscript in preparation</div></div>
+          <div class="fellow-card"><div class="fellow-name">Benjamin Lau, PhD</div><div class="fellow-year">Graduate Supervision · 2024–Present</div><div class="fellow-now">AF / stroke risk population health</div></div>
+          <div class="fellow-card"><div class="fellow-name">Shrivatsa Shantanu, PhD</div><div class="fellow-year">Graduate Supervision · 2024–Present</div><div class="fellow-now">AF population analysis</div></div>
+        </div>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- ━━━━━━━━━━━━━━━━━━━━━━━ COLLABORATORS ━━━━━━━━━━━━━━━━━━━━━━━ -->
+<!-- COLLABORATORS -->
 <section class="page" id="page-collaborators">
-  <div class="page-hero">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/UNC-CH_Medical_Center.jpg/1280px-UNC-CH_Medical_Center.jpg"
-         alt="UNC" onerror="this.style.background:'#13294b';">
-    <div class="page-hero-text">
-      <div class="page-hero-sub">Research Network</div>
-      <div class="page-hero-title">Collaborators &amp; Mentees</div>
-    </div>
-  </div>
+  <div class="page-hero"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/UNC-CH_Medical_Center.jpg/1280px-UNC-CH_Medical_Center.jpg" alt="UNC" onerror="this.style.background='#13294b'"><div class="page-hero-text"><div class="page-hero-sub">Research Network</div><div class="page-hero-title">Collaborators &amp; Mentees</div></div></div>
   <div class="page-content">
-
-    <div class="section">
-      <div class="section-title">Active Research Collaborators</div>
-      <div class="collab-grid">
-        <div class="collab-card">
-          <div class="collab-name">Lindsey Rosman, PhD</div>
-          <div class="collab-inst">UNC Chapel Hill</div>
-          <div class="collab-area">Digital health · Wearables · ICD outcomes · K23</div>
-        </div>
-        <div class="collab-card">
-          <div class="collab-name">Rachel Lampert, MD</div>
-          <div class="collab-inst">Yale University</div>
-          <div class="collab-area">ICD patients · Psychological wellbeing · Arrhythmia risk</div>
-        </div>
-        <div class="collab-card">
-          <div class="collab-name">Anthony Mazzella, MD</div>
-          <div class="collab-inst">UNC Chapel Hill</div>
-          <div class="collab-area">TAVR · AF · Syncope · Health services</div>
-        </div>
-        <div class="collab-card">
-          <div class="collab-name">Thomas Caranasos, MD</div>
-          <div class="collab-inst">UNC Chapel Hill — Cardiothoracic Surgery</div>
-          <div class="collab-area">Hybrid AF ablation · Surgical EP</div>
-        </div>
-        <div class="collab-card">
-          <div class="collab-name">Quefeng Li, PhD</div>
-          <div class="collab-inst">UNC Gillings School of Public Health</div>
-          <div class="collab-area">Biostatistics · Machine learning · EHR analysis</div>
-        </div>
-        <div class="collab-card">
-          <div class="collab-name">Kevin Biese, MD</div>
-          <div class="collab-inst">UNC Emergency Medicine</div>
-          <div class="collab-area">AFib in ED · Care pathways</div>
-        </div>
-        <div class="collab-card">
-          <div class="collab-name">Samuel F. Sears, PhD</div>
-          <div class="collab-inst">Vidant Health / ECU</div>
-          <div class="collab-area">Patient-reported outcomes · ICD psychology · AF self-management</div>
-        </div>
-        <div class="collab-card">
-          <div class="collab-name">Matthew Burg, PhD</div>
-          <div class="collab-inst">Yale University</div>
-          <div class="collab-area">Psychosocial factors · Cardiac outcomes</div>
-        </div>
-        <div class="collab-card">
-          <div class="collab-name">Todd Maddox, MD</div>
-          <div class="collab-inst">University of Colorado / NCDR</div>
-          <div class="collab-area">NCDR PINNACLE · AF quality metrics</div>
-        </div>
-        <div class="collab-card">
-          <div class="collab-name">Mintu Turakhia, MD</div>
-          <div class="collab-inst">Stanford / UCSF</div>
-          <div class="collab-area">Digital health · AF · NCDR registries</div>
-        </div>
-        <div class="collab-card">
-          <div class="collab-name">Jason Akar, MD</div>
-          <div class="collab-inst">Yale University</div>
-          <div class="collab-area">Ablation mechanisms · CFAEs</div>
-        </div>
-        <div class="collab-card">
-          <div class="collab-name">Zhicheng Guo, PhD</div>
-          <div class="collab-inst">Engineering / Computer Science</div>
-          <div class="collab-area">Deep learning · ECG · Embedded systems</div>
-        </div>
+    <div class="section"><div class="section-title">Dr. Gehi &amp; The UNC EP Team</div>
+      <div class="photo-grid-4">
+        <div class="photo-card"><img src="https://www.med.unc.edu/medicine/cardiology/wp-content/uploads/sites/640/2019/03/Gehi_Anil_025.jpg" alt="Anil Gehi MD" style="height:155px;object-fit:cover;width:100%" onerror="this.parentElement.style.background='#1f3d5a'"><div class="photo-card-caption"><strong>Anil K. Gehi, MD</strong><span>Professor · Director, EP</span></div></div>
+        <div class="photo-card"><img src="https://www.med.unc.edu/medicine/cardiology/wp-content/uploads/sites/640/2022/06/Rosman_Lindsey_022.jpg" alt="Lindsey Rosman PhD" style="height:155px;object-fit:cover;width:100%;object-position:top" onerror="this.parentElement.style.background='#1f3d5a'"><div class="photo-card-caption"><strong>Lindsey Rosman, PhD</strong><span>Digital Health · Wearables</span></div></div>
+        <div class="photo-card"><img src="https://www.med.unc.edu/medicine/cardiology/wp-content/uploads/sites/640/2021/10/Mazzella_Anthony_011.jpg" alt="Tony Mazzella MD" style="height:155px;object-fit:cover;width:100%;object-position:top" onerror="this.parentElement.style.background='#1f3d5a'"><div class="photo-card-caption"><strong>Tony Mazzella, MD, FHRS</strong><span>TAVR · AF · Syncope</span></div></div>
+        <div class="photo-card"><img src="https://www.med.unc.edu/surgery/cardiothoracic/wp-content/uploads/sites/627/2018/12/CaranososThomas.jpg" alt="Thomas Caranasos MD" style="height:155px;object-fit:cover;width:100%;object-position:top" onerror="this.parentElement.style.background='#1f3d5a'"><div class="photo-card-caption"><strong>Thomas Caranasos, MD</strong><span>Cardiothoracic Surgery · Hybrid AF</span></div></div>
       </div>
     </div>
-
-    <div class="section">
-      <div class="section-title">Current Trainees</div>
+    <div class="section"><div class="section-title">Active Research Collaborators</div>
       <div class="collab-grid">
-        <div class="collab-card"><div class="collab-name">Abhinav Shankar</div><div class="collab-inst">Research Mentee · 2024–Present</div><div class="collab-area">Project in progress</div></div>
-        <div class="collab-card"><div class="collab-name">Benjamin Chilcutt, MD</div><div class="collab-inst">Research Mentee · 2023–2025</div><div class="collab-area">AFib screening · HRS abstract; manuscript in prep</div></div>
-        <div class="collab-card"><div class="collab-name">Benjamin Lau, PhD</div><div class="collab-inst">Graduate Supervision · 2024–Present</div><div class="collab-area">AFib · Stroke risk · Population health</div></div>
-        <div class="collab-card"><div class="collab-name">Shrivatsa Shantanu, PhD</div><div class="collab-inst">Graduate Supervision · 2024–Present</div><div class="collab-area">AF population analysis · UNC</div></div>
+        <div class="collab-card"><div class="collab-photo-placeholder">LR</div><div class="collab-body"><div class="collab-name">Lindsey Rosman, PhD</div><div class="collab-inst">UNC Chapel Hill</div><div class="collab-area">Digital health · Wearables · ICD outcomes</div></div></div>
+        <div class="collab-card"><div class="collab-photo-placeholder">RL</div><div class="collab-body"><div class="collab-name">Rachel Lampert, MD</div><div class="collab-inst">Yale University</div><div class="collab-area">ICD psychology · Arrhythmia risk</div></div></div>
+        <div class="collab-card"><div class="collab-photo-placeholder">AM</div><div class="collab-body"><div class="collab-name">Anthony Mazzella, MD</div><div class="collab-inst">UNC Chapel Hill</div><div class="collab-area">TAVR · AF · Syncope · Health services</div></div></div>
+        <div class="collab-card"><div class="collab-photo-placeholder">TC</div><div class="collab-body"><div class="collab-name">Thomas Caranasos, MD</div><div class="collab-inst">UNC Cardiothoracic Surgery</div><div class="collab-area">Hybrid AF ablation · Surgical EP</div></div></div>
+        <div class="collab-card"><div class="collab-photo-placeholder">QL</div><div class="collab-body"><div class="collab-name">Quefeng Li, PhD</div><div class="collab-inst">UNC Gillings School</div><div class="collab-area">Biostatistics · Machine learning</div></div></div>
+        <div class="collab-card"><div class="collab-photo-placeholder">KB</div><div class="collab-body"><div class="collab-name">Kevin Biese, MD</div><div class="collab-inst">UNC Emergency Medicine</div><div class="collab-area">AFib in ED · Care pathways</div></div></div>
+        <div class="collab-card"><div class="collab-photo-placeholder">SS</div><div class="collab-body"><div class="collab-name">Samuel F. Sears, PhD</div><div class="collab-inst">Vidant Health / ECU</div><div class="collab-area">Patient outcomes · ICD psychology</div></div></div>
+        <div class="collab-card"><div class="collab-photo-placeholder">MB</div><div class="collab-body"><div class="collab-name">Matthew Burg, PhD</div><div class="collab-inst">Yale University</div><div class="collab-area">Psychosocial factors · Cardiac outcomes</div></div></div>
+        <div class="collab-card"><div class="collab-photo-placeholder">MT</div><div class="collab-body"><div class="collab-name">Mintu Turakhia, MD</div><div class="collab-inst">Stanford / UCSF</div><div class="collab-area">Digital health · AF · NCDR registries</div></div></div>
+        <div class="collab-card"><div class="collab-photo-placeholder">JA</div><div class="collab-body"><div class="collab-name">Jason Akar, MD</div><div class="collab-inst">Yale University</div><div class="collab-area">Ablation mechanisms · CFAEs</div></div></div>
+        <div class="collab-card"><div class="collab-photo-placeholder">TM</div><div class="collab-body"><div class="collab-name">Todd Maddox, MD</div><div class="collab-inst">University of Colorado / NCDR</div><div class="collab-area">NCDR PINNACLE · AF quality metrics</div></div></div>
+        <div class="collab-card"><div class="collab-photo-placeholder">ZG</div><div class="collab-body"><div class="collab-name">Zhicheng Guo, PhD</div><div class="collab-inst">Engineering / CS</div><div class="collab-area">Deep learning · ECG · Embedded systems</div></div></div>
       </div>
     </div>
-
-    <div class="section">
-      <div class="section-title">Former Mentees — Selected</div>
-      <div class="collab-grid">
-        <div class="collab-card"><div class="collab-name">Taylor Bazemore, MD</div><div class="collab-inst">2018–2024</div><div class="collab-area">AF ablation · Gender differences · Publication in PACE</div></div>
-        <div class="collab-card"><div class="collab-name">Michael Daw</div><div class="collab-inst">2018–2024</div><div class="collab-area">AF in ED · Medical school admission</div></div>
-        <div class="collab-card"><div class="collab-name">Jennifer Walker, ANP</div><div class="collab-inst">2011–Present</div><div class="collab-area">AF transitions of care · Multiple HRS abstracts</div></div>
-        <div class="collab-card"><div class="collab-name">Oludamilola Aladesanmi, MD</div><div class="collab-inst">2021–2023</div><div class="collab-area">AF care disparities · HRS abstract</div></div>
-        <div class="collab-card"><div class="collab-name">Justin Vandermolen, MD</div><div class="collab-inst">2015–2017</div><div class="collab-area">ED AFib · ACC abstract; J Atr Fib manuscript</div></div>
-        <div class="collab-card"><div class="collab-name">Matthew Baker, MD</div><div class="collab-inst">2013–2017</div><div class="collab-area">NEJM letter · EP manuscripts</div></div>
-      </div>
-    </div>
-
   </div>
 </section>
 
 </main>
 
 <script>
-function showPage(id, navEl) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
-  const page = document.getElementById('page-' + id);
-  if (page) page.classList.add('active');
-  if (navEl) navEl.classList.add('active');
-  window.scrollTo(0, 0);
-  return false;
+function showPage(id,navEl){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('nav a').forEach(a=>a.classList.remove('active'));
+  const page=document.getElementById('page-'+id);
+  if(page)page.classList.add('active');
+  if(navEl)navEl.classList.add('active');
+  window.scrollTo(0,0);
 }
-
-function toggleProj(header) {
+function toggleProj(header){
   header.nextElementSibling.classList.toggle('open');
 }
-
-function filterPubs(cat, btn) {
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+function switchTab(btn,paneId){
+  const nav=btn.closest('.tab-nav');
+  const content=btn.closest('.page-content,.page');
+  nav.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
-  document.querySelectorAll('.pub-entry[data-cat]').forEach(el => {
-    if (cat === 'all' || el.dataset.cat === cat) {
-      el.style.display = '';
-    } else {
-      el.style.display = 'none';
-    }
-  });
+  content.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
+  const pane=document.getElementById(paneId);
+  if(pane)pane.classList.add('active');
 }
 </script>
 </body>
 </html>
+ENDOFFILE
